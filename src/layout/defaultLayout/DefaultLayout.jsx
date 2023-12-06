@@ -1,7 +1,11 @@
+import Footer from "../../components/Footer/Footer";
 
 function DefaultLayout({ children }) {
     return (
-        children
+    <div>
+      {children}
+      <Footer/>
+    </div>
     );
 }
 
