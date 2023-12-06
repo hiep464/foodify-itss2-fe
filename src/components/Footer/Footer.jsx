@@ -8,7 +8,7 @@ const Footer = () => {
         <MDBFooter bgColor='#F9F9F9' className='small text-center text-lg-start '>
           <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
           </section>
-    
+          
           <section className=''>
             <MDBContainer className='text-center text-md-start mt-5'>
               <MDBRow className='mt-3'>
