@@ -23,7 +23,7 @@ const Footer = () => {
                 </MDBCol>
     
                 <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-                  <h6 className='text-dark small text-uppercase fw-bold mb-4'>Tastebite</h6>
+                  <h6 className='text-dark small  fw-bold mb-4'>Tastebite</h6>
                   <p>
                     <a href='/' className='text-gray'>
                     About us
@@ -47,7 +47,7 @@ const Footer = () => {
                 </MDBCol>
     
                 <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-                  <h6 className='text-dark small text-uppercase fw-bold mb-4'>Legal</h6>
+                  <h6 className='text-dark small  fw-bold mb-4'>Legal</h6>
                   <p>
                     <a href='/' className='text-gray '>
                     Terms
@@ -71,7 +71,7 @@ const Footer = () => {
                 </MDBCol>
     
                 <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-                  <h6 className='text-dark small text-uppercase fw-bold mb-4'>Follow</h6>
+                  <h6 className='text-dark small  fw-bold mb-4'>Follow</h6>
                   <p className='text-gray'>
                     
                   Facebook                  </p>
@@ -87,32 +87,28 @@ const Footer = () => {
             </MDBContainer>
           </section>
     
-          <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-          <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
+          <div className='text-center p-4' >
+          <section className='d-flex justify-content-center justify-content-lg-between p-4 border-top'>
           
             <div className='me-5 d-none d-lg-block'>
               <span>© 2023 Foodify - All rights reserved</span>
             </div>
     
             <div>
-              <a href='/' className='me-4 text-gray'>
-                <MDBIcon fab icon="facebook-f" />
+              <a href='/' className='me-4 text-dark'>
+                <MDBIcon fab icon="facebook" />
               </a>
-              <a href='/' className='me-4 text-gray'>
-                <MDBIcon fab icon="twitter" />
-              </a>
-              <a href='/' className='me-4 text-gray'>
-                <MDBIcon fab icon="google" />
-              </a>
-              <a href='/' className='me-4 text-gray'>
+              <a href='/' className='me-4 text-dark'>
                 <MDBIcon fab icon="instagram" />
               </a>
-              <a href='/' className='me-4 text-gray'>
-                <MDBIcon fab icon="linkedin" />
+              <a href='/' className='me-4 text-dark'>
+                <MDBIcon fab icon="twitter" />
               </a>
-              <a href='/' className='me-4 text-reset'>
-                <MDBIcon fab icon="github" />
+              
+              <a href='/' className='me-4 text-dark'>
+                <MDBIcon fab icon="youtube" />
               </a>
+              
             </div>
           </section>
           </div>
