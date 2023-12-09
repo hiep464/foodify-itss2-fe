@@ -1,9 +1,10 @@
 import Footer from "../../components/Footer/Footer";
 import Search from "../../components/Search/Search";
+import Header from "../header";
 function DefaultLayout({ children }) {
     return (
     <div>
-      <Search/>
+      <Header/>
       {children}
       <Footer/>
     </div>
