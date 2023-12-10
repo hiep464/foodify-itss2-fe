@@ -16,7 +16,7 @@ const Search = () => {
     
     const customColStyle2 = {
         flex: '0 0 80%',
-        maxWidth: '30%',
+        maxWidth: '40%',
         backgroundColor: '#FF642F',
         marginLeft: '40px',
         marginTop: '80px',
@@ -29,7 +29,7 @@ const Search = () => {
 
     return (
         <MDBRow className="justify-content-center" style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <MDBCol style={customColStyle}>
+            <MDBCol className="search-box1" style={customColStyle}>
                 <div className="text-in-search-box">Tìm kiếm nguyên liệu</div>
 
                 <div>
@@ -37,7 +37,7 @@ const Search = () => {
                 </div>
             </MDBCol>
 
-            <MDBCol style={customColStyle2}>
+            <MDBCol className="search-box2" style={customColStyle2}>
             <div className="text-in-search-box">TÌm kiếm món ăn</div>
 
        
