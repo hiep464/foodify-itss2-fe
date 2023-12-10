@@ -1,5 +1,6 @@
-import Login from "../pages/login/Login"
+import DefaultLayout from "../layout/defaultLayout/DefaultLayout"
+import RecipeSearch from "../pages/recipe_search"
 
 export const publicRoutes = [
-    {path: '/', element : Login},
+    {path: '/', element : RecipeSearch, layout: DefaultLayout},
 ]
