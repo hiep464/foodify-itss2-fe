@@ -1,8 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    font-size: 23px;
+    margin-top: 40px;
+    font-size: 19px;
     position: relative;
     /* z-index: -1; */
 }
@@ -48,7 +48,7 @@
 
 input[type='radio'],
 input[type='checkbox'] {
-    margin-right: 15px;
-    zoom: 2;
+    margin-right: 10px;
+    zoom: 1.5;
     vertical-align: middle;
 }
