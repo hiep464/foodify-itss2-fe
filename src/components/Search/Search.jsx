@@ -21,6 +21,7 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
         const updatedWords = [...selectedWords];
         updatedWords.splice(index, 1);
         setSelectedWords(updatedWords);
+        setIngredients(updatedWords);
     };
     const customColStyle = {
         flex: '0 0 80%',
