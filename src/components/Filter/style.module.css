@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 23px;
+    position: absolute;
+}
+
+.regionContainer,
+.categoryContainer {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    align-items: start;
+}
+
+.radioLabel,
+.checkboxLabel {
+    margin-left: 5px;
+    align-items: center;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    margin-right: 5px;
+    zoom: 2;
+    vertical-align: middle;
+}
