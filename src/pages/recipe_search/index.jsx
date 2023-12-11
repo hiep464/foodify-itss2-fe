@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Search from '../../components/Search/Search';
 import FoodItem from '../../components/FoodItem';
 import ItemImange from '../../acess/item.png';
+import Filter from '../../components/Filter/Filter';
+import Card from '../../components/Card/index';
+import Data from '../../Data';
 
 function RecipeSearch() {
+    const [filteredItem, setFilterItem] = useState(Data);
+
+    const handleFilterChange = (filteredData) => {
+        setFilterItem(filteredData);
+    }
     return (
         <>
             <Search />
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <div style={{ width: '66%' }}>
+                    <div>
+                        <Filter data={Data} onFilterChange={handleFilterChange}/>
+                    </div>
                     <div style={{ width: '712px', marginLeft: '400px' }}>
                         <div style={{ fontSize: '30px', fontWeight: '700', color: 'black', margin: '40px 0 20px 0' }}>
                             Có 23 công thức nấu ăn
