@@ -41,43 +41,49 @@ const Filter = ({ data, onFilterChange }) => {
 
   return (
     <div className={styles.container}>
-      <div className='justifyContent: center'>
+      <div className={styles.title}>
         Phan loai khu vuc
       </div>
-      <div className={styles.regionContainer}>
-        {regions.map((val, id) => (
-          <div key={id}>
-            <input
-              type='radio'
-              id={`region-${id}`}
-              name='region-filter'
-              value={val}
-              checked={selectedRegion === val}
-              onChange={() => setSelectedRegion(val)}
-            />
-            <label className={styles.radioLabel} htmlFor={`region-${id}`}>{val}</label>
-          </div>
-        ))}
+      <div className={styles.box}>
+        <div className={styles.regionContainer}>
+          {regions.map((val, id) => (
+            <div key={id}>
+              <input
+                type='radio'
+                id={`region-${id}`}
+                name='region-filter'
+                value={val}
+                checked={selectedRegion === val}
+                onChange={() => setSelectedRegion(val)}
+              />
+              <label className={styles.radioLabel} htmlFor={`region-${id}`}>{val}</label>
+            </div>
+          ))}
+        </div>
       </div>
+      
 
-      <div className='justifyContent: center'>
+      <div className={styles.title}>
         Phan loai do an
       </div>
-      <div className={styles.categoryContainer}>
-        {categories.map((val, id) => (
-          <div key={id}>
-            <input
-              type='checkbox'
-              id={`category-${id}`}
-              name='category-filter'
-              value={val}
-              checked={selectedCategories.includes(val)}
-              onChange={() => handleCategoryChange(val)}
-            />
-            <label className={styles.checkboxLabel} htmlFor={`category-${id}`}>{val}</label>
-          </div>
-        ))}
+      <div className={styles.box}>
+        <div className={styles.categoryContainer}>
+          {categories.map((val, id) => (
+            <div key={id}>
+              <input
+                type='checkbox'
+                id={`category-${id}`}
+                name='category-filter'
+                value={val}
+                checked={selectedCategories.includes(val)}
+                onChange={() => handleCategoryChange(val)}
+              />
+              <label className={styles.checkboxLabel} htmlFor={`category-${id}`}>{val}</label>
+            </div>
+          ))}
+        </div>
       </div>
+      
     </div>
   );
 };
