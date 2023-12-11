@@ -1,7 +1,7 @@
 import React from 'react';
 import {  MDBRow, MDBCol } from 'mdbreact';
 import './Search.css';
-const Search = () => {
+const Search = ({name, setName, ingredients, setIngredients}) => {
     const customColStyle = {
         flex: '0 0 80%',
         maxWidth: '15%',
@@ -33,7 +33,7 @@ const Search = () => {
                 <div className="text-in-search-box">Tìm kiếm nguyên liệu</div>
 
                 <div>
-                    <input className="form-control" type="text" placeholder="Nhập tên nguyên liệu" aria-label="Search" />
+                    <input onChange={(e) => {setIngredients(e.target.value)}} className="form-control" type="text" placeholder="Nhập tên nguyên liệu" aria-label="Search" />
                 </div>
             </MDBCol>
 
@@ -41,7 +41,7 @@ const Search = () => {
             <div className="text-in-search-box">TÌm kiếm món ăn</div>
 
        
-      <input className="form-control" type="text" placeholder="Nhập tên món ăn" aria-label="Search" />
+      <input onChange={(e) => {setName(e.target.value)}} className="form-control" type="text" placeholder="Nhập tên món ăn" aria-label="Search" />
             </MDBCol>
         </MDBRow>
     );
