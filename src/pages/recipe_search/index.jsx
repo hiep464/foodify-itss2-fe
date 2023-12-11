@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import Search from '../../components/Search/Search';
-import FoodItem from '../../components/FoodItem';
-import ItemImange from '../../acess/item.png';
-import Filter from '../../components/Filter/Filter';
-import Card from '../../components/Card/index';
-import Data from '../../Data';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+
+import Filter from '../../components/Filter/Filter';
+import FoodItem from '../../components/FoodItem';
+import Search from '../../components/Search/Search';
 import { baseApi } from '../../constance';
 
+// import Data from '../../Data';
 const numPage = 6;
 
 function RecipeSearch() {
-    const [filteredItem, setFilterItem] = useState(Data);
+    
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [data, setData] = useState([]);
@@ -19,12 +18,14 @@ function RecipeSearch() {
     const [length, setLength] = useState([]);
     const [page, setPage] = useState(1);
     const [pageNum, setPageNum] = useState([]);
-
+    
+    const [filteredItem, setFilterItem] = useState([]);
     const handleFilterChange = (filteredData) => {
         setFilterItem(filteredData);
     };
 
     useEffect(() => {
+        setFilterItem([]);// 
         var route = baseApi + '/food/search'
         if(name != '' || ingredients != '')
             route = route + '?name=' + name + '&' + ingredients
@@ -57,12 +58,12 @@ function RecipeSearch() {
         <>
             <Search name={name} setName={setName} ingredients={ingredients} setIngredients={setIngredients} />
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <div style={{ width: '66%' }}>
-                    <div>
-                        <Filter data={Data} onFilterChange={handleFilterChange} />
+                <div className='row' style={{ width: '80%' }}>
+                    <div style={{width: '35%'}}>
+                        <Filter data={data} onFilterChange={handleFilterChange} />
                     </div>
-                    <div style={{ width: '712px', marginLeft: '400px' }}>
-                        <div style={{ fontSize: '30px', fontWeight: '700', color: 'black', margin: '40px 0 20px 0' }}>
+                    <div style={{ maxWidth: '645px', marginLeft: '4px' }}>
+                        <div style={{ fontSize: '30px', fontWeight: '700', color: 'black', margin: '20px 0 20px 0' }}>
                             Có {length} công thức nấu ăn
                         </div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
