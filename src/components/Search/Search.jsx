@@ -3,14 +3,14 @@ import { MDBRow, MDBCol } from 'mdbreact';
 import './Search.css';
 import PopupSearch from './PopupSearch/PopupSearch';
 
-const Search = ({name, setName, ingredients, setIngredients}) => {
+const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [selectedWords, setSelectedWords] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
     const handleSearchInputChange = (word) => {
-        setSelectedWords([...selectedWords, word]);
+        setSelectedWords(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
         setInputValue('');
-        setIngredients([...selectedWords, word]);
+        setIngredients(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
     };
 
     const handleInputChange = (value) => {
@@ -25,7 +25,7 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
     };
     const customColStyle = {
         flex: '0 0 80%',
-        maxWidth: '22%',
+        maxWidth: '25%',
         backgroundColor: '#FF642F',
         marginTop: '80px',
         marginRight: '10px',
@@ -51,15 +51,15 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
     };
     const selectedWordsStyle = {
         marginTop: '5px',
-        width:'25%',
-        marginRight:'700px',
+        width: '25%',
+        marginRight: '700px',
         display: 'flex',
         flexWrap: 'wrap',
         padding: '5px', // Adjust padding for better spacing
     };
 
     const wordBoxStyle = {
-        backgroundColor:'#c4c4c4',
+        backgroundColor: '#c4c4c4',
         color: 'black', // Text color
         border: '1px solid #ccc', // Border for each word box
         borderRadius: '5px', // Rounded corners
@@ -68,16 +68,13 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
         display: 'flex', // Center text vertically
         alignItems: 'center', // Center text vertically
         fontSize: '14px',
-        
-      };
-     
+    };
 
     return (
-        <MDBRow className="" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <MDBRow className="justify-content-center" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <MDBCol className="search-box1" style={customColStyle}>
                 <div className="text-in-search-box">Tìm kiếm nguyên liệu</div>
 
-                
                 <input
                     className="form-control"
                     type="text"
@@ -98,16 +95,24 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
             <MDBCol className="search-box2" style={customColStyle2}>
                 <div className="text-in-search-box">TÌm kiếm món ăn</div>
 
-       
-      <input onChange={(e) => {setName(e.target.value)}} className="form-control" type="text" placeholder="Nhập tên món ăn" aria-label="Search" />
+                <input
+                    onChange={(e) => {
+                        setName(e.target.value);
+                    }}
+                    className="form-control"
+                    type="text"
+                    placeholder="Nhập tên món ăn"
+                    aria-label="Search"
+                />
             </MDBCol>
+
             <div className="selected-words" style={selectedWordsStyle}>
                 {selectedWords.map((word, index) => (
                     <span key={index} style={wordBoxStyle}>
                         {word}{' '}
-                        <span className="buttonX" onClick={handleDeleteWord}>X</span>
-                            
-                        
+                        <span className="buttonX" onClick={() => handleDeleteWord(index)}>
+                            X
+                        </span>
                     </span>
                 ))}
             </div>
