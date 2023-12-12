@@ -27,6 +27,7 @@ function RecipeSearch() {
     useEffect(() => {
         setFilterItem([]);// 
         var route = baseApi + '/food/search'
+        console.log(name)
         if(name != '' || ingredients != '')
             route = route + '?name=' + name + '&' + ingredients
         axios.get(route).then((res) => {
@@ -45,12 +46,13 @@ function RecipeSearch() {
     const handleChangePage = (item) => {
         setPage(item);
         const itemsPerPage = 6;
-
-        const startIndex = (page - 1) * itemsPerPage;
+        console.log(page)
+        const startIndex = (item - 1) * itemsPerPage;
         const endIndex = Math.min(startIndex + itemsPerPage, length);
 
         // Logic để lấy dữ liệu cho trang hiện tại từ startIndex đến endIndex
         const currentItems = data.slice(startIndex, endIndex);
+        console.log(currentItems)
         setDataPage(currentItems);
     };
 
