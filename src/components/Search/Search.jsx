@@ -1,12 +1,16 @@
+import { MDBCol, MDBRow } from 'mdbreact';
 import React from 'react';
-import {  MDBRow, MDBCol } from 'mdbreact';
+
 import './Search.css';
+
 const Search = ({name, setName, ingredients, setIngredients}) => {
     const customColStyle = {
         flex: '0 0 80%',
-        maxWidth: '15%',
+        // maxWidth: '26%',
+        maxWidth:'347px',
         backgroundColor: '#FF642F',
         marginTop: '80px',
+        marginLeft:'145px',
         height: '90px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
@@ -16,9 +20,9 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
     
     const customColStyle2 = {
         flex: '0 0 80%',
-        maxWidth: '40%',
+        maxWidth: '45%',
         backgroundColor: '#FF642F',
-        marginLeft: '40px',
+        marginLeft: '30px',
         marginTop: '80px',
         height: '90px',
         display: 'flex',
@@ -28,7 +32,7 @@ const Search = ({name, setName, ingredients, setIngredients}) => {
     };
 
     return (
-        <MDBRow className="justify-content-center" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <MDBRow className="" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <MDBCol className="search-box1" style={customColStyle}>
                 <div className="text-in-search-box">Tìm kiếm nguyên liệu</div>
 
