@@ -10,10 +10,11 @@ const PopupSearch = ({ isOpen, words, inputValue, onSelect, onClose }) => {
 
   return (
     <div className="popup" style={{ display: isOpen ? 'block' : 'none' }}>
-      <span onClick={onClose} className="close-button">
+      {filteredWords.length>0 &&(<span onClick={onClose} className="close-button">
         &#10006;
-      </span>
+      </span>)}
       {filteredWords.map((word, index) => (
+        
         <div key={index} onClick={() => onSelect(word)}>
           {word}
         </div>
