@@ -45,7 +45,7 @@ const Filter = ({ data, onFilterChange }) => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        Phan loai khu vuc
+        Phân loại khu vực
       </div>
       <div className={styles.box}>
         <div className={styles.regionContainer}>
@@ -67,7 +67,7 @@ const Filter = ({ data, onFilterChange }) => {
       
 
       <div className={styles.title}>
-        Phan loai do an
+        Phân loại đồ ăn
       </div>
       <div className={styles.box}>
         <div className={styles.categoryContainer}>
