@@ -2,7 +2,8 @@
 import React from 'react';
 import './PopupSearch.css';
 const PopupSearch = ({ isOpen, words, inputValue, onSelect, onClose }) => {
-  const normalizedInputValue = inputValue ? inputValue.toLowerCase() : '';
+  console.log(inputValue)
+  const normalizedInputValue = inputValue ? inputValue[0]?.toLowerCase() : '';
 
   const filteredWords = words.filter((word) =>
     word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(normalizedInputValue)

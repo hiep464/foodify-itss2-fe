@@ -33,7 +33,11 @@ function RecipeSearch() {
         axios.get(route).then((res) => {
             setData(res.data);
             setLength(res.data.length);
-            const num = res.data.length / numPage + 1;
+            var num = 0
+            if(res.data.length / numPage === 0)
+                num = res.data.length / numPage ;
+            else
+                num = res.data.length / numPage + 1;
             var numberNineArray = Array.from({ length: num }, (_, index) => index + 1);
             setPageNum(numberNineArray);
             const currentItems = res.data.slice(0, 6);
@@ -46,7 +50,7 @@ function RecipeSearch() {
     const handleChangePage = (item) => {
         setPage(item);
         const itemsPerPage = 6;
-        console.log(page)
+        console.log(page, item)
         const startIndex = (item - 1) * itemsPerPage;
         const endIndex = Math.min(startIndex + itemsPerPage, length);
 

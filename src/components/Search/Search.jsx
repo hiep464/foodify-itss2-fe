@@ -5,16 +5,17 @@ import PopupSearch from './PopupSearch/PopupSearch';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [selectedWords, setSelectedWords] = useState([]);
-    const [inputValue, setInputValue] = useState('');
+    // const [inputValue, setInputValue] = useState('');
 
     const handleSearchInputChange = (word) => {
         setSelectedWords(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
-        setInputValue('');
+        // setInputValue('');
         setIngredients(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
     };
 
     const handleInputChange = (value) => {
-        setInputValue(value);
+        // setInputValue(value);
+        setIngredients(value)
     };
 
     const handleDeleteWord = (index) => {
@@ -79,16 +80,16 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
                     className="form-control"
                     type="text"
                     placeholder="Nhập tên nguyên liệu"
-                    value={inputValue}
+                    value={ingredients}
                     onChange={(e) => handleInputChange(e.target.value)}
                     aria-label="Search"
                 />
                 <PopupSearch
-                    isOpen={!!inputValue}
-                    inputValue={inputValue}
+                    isOpen={!!ingredients}
+                    inputValue={ingredients}
                     words={['Tôm', 'Hành', 'Tỏi', 'Cá', 'Sườn heo']}
                     onSelect={handleSearchInputChange}
-                    onClose={() => setInputValue('')}
+                    onClose={() => setIngredients('')}
                 />
             </MDBCol>
 
@@ -99,6 +100,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
                     onChange={(e) => {
                         setName(e.target.value);
                     }}
+                    value={name}
                     className="form-control"
                     type="text"
                     placeholder="Nhập tên món ăn"
