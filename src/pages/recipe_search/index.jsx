@@ -40,7 +40,7 @@ function RecipeSearch() {
                 num = res.data.length / numPage + 1;
             var numberNineArray = Array.from({ length: num }, (_, index) => index + 1);
             setPageNum(numberNineArray);
-            const currentItems = res.data.slice(0, 6);
+            const currentItems = res.data.data?.slice(0,6);
             console.log(currentItems);
             setPage(1)
             setDataPage(currentItems);

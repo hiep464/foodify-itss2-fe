@@ -18,6 +18,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         setIngredients(value)
     };
 
+
     const handleDeleteWord = (index) => {
         const updatedWords = [...selectedWords];
         updatedWords.splice(index, 1);
@@ -26,10 +27,10 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
     };
     const customColStyle = {
         flex: '0 0 80%',
-        maxWidth: '25%',
+        maxWidth: '25.5%',
         backgroundColor: '#FF642F',
         marginTop: '80px',
-        marginRight: '10px',
+        marginRight: '30px',
         height: '90px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
@@ -40,9 +41,9 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
 
     const customColStyle2 = {
         flex: '0 0 80%',
-        maxWidth: '45%',
+        maxWidth: '46.2%',
         backgroundColor: '#FF642F',
-        marginLeft: '20px',
+        marginRight: '35px',
         marginTop: '80px',
         height: '90px',
         display: 'flex',
