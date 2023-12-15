@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
 import Filter from '../../components/Filter/Filter';
 import FoodItem from '../../components/FoodItem';
 import Search from '../../components/Search/Search';
 import { baseApi } from '../../constance';
+import { Link } from 'react-router-dom';
 
 // import Data from '../../Data';
 const numPage = 6;
@@ -18,7 +18,7 @@ function RecipeSearch() {
     const [length, setLength] = useState([]);
     const [page, setPage] = useState(1);
     const [pageNum, setPageNum] = useState([]);
-    
+
     const [filteredItem, setFilterItem] = useState([]);
     const handleFilterChange = (filteredData) => {
         setFilterItem(filteredData);
@@ -59,7 +59,6 @@ function RecipeSearch() {
         console.log(currentItems)
         setDataPage(currentItems);
     };
-
     return (
         <>
             <Search name={name} setName={setName} ingredients={ingredients} setIngredients={setIngredients} />
@@ -75,12 +74,15 @@ function RecipeSearch() {
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                             {dataPage.map((item, idx) => {
                                 return (
+                                    <Link key={idx} to={`/recipe/${idx}`}>
+
                                     <FoodItem
                                         key={idx}
                                         image={item?.thumbnail}
                                         time={item?.cooking_time}
                                         description={item?.name}
                                     />
+                                    </Link>
                                 );
                             })}
                         </div>
