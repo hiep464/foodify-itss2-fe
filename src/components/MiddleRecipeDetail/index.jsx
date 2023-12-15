@@ -13,7 +13,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
                     <div className="grid-item">Khẩu phần</div>
                     <div className="grid-item1">{foodData?.prep_time ? `${foodData.prep_time} phút` : ''}</div>
                     <div className="grid-item1">{foodData?.cooking_time ? `${foodData.cooking_time} phút` : ''}</div>
-                    <div className="grid-item1">{foodData?.servings  ?`${foodData.servings} phút` : ''}</div>
+                    <div className="grid-item1">{foodData?.servings  ?`${foodData.servings} người` : ''}</div>
                 </div>
             </div>
 
