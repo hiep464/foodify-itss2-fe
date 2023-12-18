@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-const Filter = ({ data, onFilterChange }) => {
-  const [item, setItem] = useState(data);
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState(null);
+const Filter = ({ selectedCategories, selectedRegion,  setSelectedCategories, setSelectedRegion}) => {
+  // const [item, setItem] = useState(data);
+  // const [selectedCategories, setSelectedCategories] = useState([]);
+  // const [selectedRegion, setSelectedRegion] = useState(null);
 
   // const categories = [...new Set(data.map((val) => val.category))];
   // const regions = [...new Set(data.map((val) => val.region))];
@@ -13,20 +13,20 @@ const Filter = ({ data, onFilterChange }) => {
   const regions = ["Món Á", "Món Âu", "Đồ ăn Việt Nam", "Đồ ăn Trung", "Đồ ăn Hàn", "Đồ ăn Nhật Bản"];
   const categories = ["Đồ ăn tráng miệng", "Đồ ăn bữa sáng", "Đồ ăn bữa trưa", "Đồ ăn bữa tối","Đồ ăn mặn","Đồ ăn ngọt"];
 
-  const filterItem = () => {
-    let newItem = data;
+  // const filterItem = () => {
+  //   let newItem = data;
 
-    if (selectedCategories.length > 0) {
-      newItem = newItem.filter((newVal) => selectedCategories.includes(newVal.food_categories_id));
-    }
+  //   if (selectedCategories.length > 0) {
+  //     newItem = newItem.filter((newVal) => selectedCategories.includes(newVal.food_categories_id));
+  //   }
 
-    if (selectedRegion && selectedRegion !== 'All') {
-      newItem = newItem.filter((newVal) => newVal.food_category_regions_id === selectedRegion);
-    }
+  //   if (selectedRegion && selectedRegion !== 'All') {
+  //     newItem = newItem.filter((newVal) => newVal.food_category_regions_id === selectedRegion);
+  //   }
 
-    setItem(newItem);
-    onFilterChange(newItem);
-  };
+  //   setItem(newItem);
+  //   onFilterChange(newItem);
+  // };
 
   const handleCategoryChange = (val) => {
     const isSelected = selectedCategories.includes(val);
@@ -38,10 +38,10 @@ const Filter = ({ data, onFilterChange }) => {
     }
   };
 
-  useEffect(() => {
-    filterItem();
-  }, [selectedCategories, selectedRegion, onFilterChange]);
-
+  // useEffect(() => {
+  //   filterItem();
+  // }, [selectedCategories, selectedRegion, onFilterChange]);
+  console.log(selectedCategories, selectedRegion)
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -56,8 +56,8 @@ const Filter = ({ data, onFilterChange }) => {
                 id={`food_category_regions_id-${id}`}
                 name='region-filter'
                 value={val}
-                checked={selectedRegion === val}
-                onChange={() => setSelectedRegion(val)}
+                checked={regions[selectedRegion] === val}
+                onChange={() => setSelectedRegion(id)}
               />
               <label className={styles.radioLabel} htmlFor={`food_category_regions_id-${id}`}>{val}</label>
             </div>
@@ -78,8 +78,8 @@ const Filter = ({ data, onFilterChange }) => {
                 id={`food_categories_id-${id}`}
                 name='category-filter'
                 value={val}
-                checked={selectedCategories.includes(val)}
-                onChange={() => handleCategoryChange(val)}
+                checked={selectedCategories.includes(categories.indexOf(val))}
+                onChange={() => handleCategoryChange(id)}
               />
               <label className={styles.checkboxLabel} htmlFor={`food_categories_id-${id}`}>{val}</label>
             </div>
