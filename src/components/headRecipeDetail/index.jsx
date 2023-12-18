@@ -1,7 +1,7 @@
-import image from '../../acess/menu144.jpg.png'
-import vector from '../../acess/Vector.png'
+import image from '../../acess/menu144.jpg.png';
+import vector from '../../acess/Vector.png';
 
-function HeadRpDetail() {
+function HeadRpDetail({ name, description, video }) {
     return (
         <div
             style={{
@@ -14,15 +14,28 @@ function HeadRpDetail() {
             }}
         >
             <div style={{ width: '68%' }}>
-                <div style={{ fontSize: '40px', fontWeight: '700', color: 'black' }}>Bánh phomai kem dâu</div>
+                <div style={{ fontSize: '40px', fontWeight: '700', color: 'black' }}>{name}</div>
             </div>
             <div style={{ width: '68%', border: '1px solid rgba(0, 0, 0, 0.1)', marginTop: '20px' }}></div>
-            <div style={{ width: '68%', margin: '30px 0'}}>
-                Đây là món ăn tôi đã học được khi sống ở Brooklyn. Một công thức làm bánh siêu ngon và dễ làm!
-            </div>
-            <div style={{ width: '68%', position: 'relative', marginBottom: '30px'}}>
-               <img style={{width: '100%', borderRadius: '12px'}} src={image} alt="" />
-               <img style={{position: 'absolute', top: 'calc(50% - 43px)', left: 'calc(50% - 53px)'}} src={vector} alt="" />
+            <div style={{ width: '68%', margin: '30px 0' }}>{description}</div>
+            <div style={{ width: '68%', position: 'relative', marginBottom: '30px' }}>
+                {/* <img style={{ width: '100%', borderRadius: '12px' }} src={image} alt="" />
+                <img
+                    style={{ position: 'absolute', top: 'calc(50% - 43px)', left: 'calc(50% - 53px)' }}
+                    src={vector}
+                    alt=""
+                /> */}
+                <iframe
+                    title={name}
+                    width="100%"
+                    height="630"
+                    src={`https://www.youtube.com/embed/${video?.match(/[?&]v=([^&]+)/)[1]}?feature=oembed`}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen=""
+                    // className="h-[230px] md:h-[204px] w-full"
+                    style={{borderRadius: '12px'}}
+                ></iframe>
             </div>
         </div>
     );

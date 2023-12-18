@@ -24,7 +24,7 @@ function RecipeDetail() {
       }, [foodId]); 
     return (
         <div>
-            <HeadRpDetail/>
+            <HeadRpDetail name={foodDetail?.name} description={foodDetail?.description} video={foodDetail?.video}/>
             <MiddleRecipeDetail foodData={foodDetail}/>
         </div>
     );
