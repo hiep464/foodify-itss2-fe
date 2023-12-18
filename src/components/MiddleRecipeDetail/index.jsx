@@ -1,13 +1,13 @@
 import React from 'react';
-
+import './middleRecipeDetail.css';
 import bulletPoint from '../../acess/bullet-point.png';
 const MiddleRecipeDetail = ({ foodData }) => {
      
     return (
         <div>
             {/* Row 1 */}
-            <div style={{ marginLeft: 150 }}>
-                <div className="grid-container">
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div className="grid-container" style={{width:'68%'}}>
                     <div className="grid-item">Thời gian chuẩn bị</div>
                     <div className="grid-item">Thời gian nấu</div>
                     <div className="grid-item">Khẩu phần</div>
@@ -18,9 +18,9 @@ const MiddleRecipeDetail = ({ foodData }) => {
             </div>
 
             {/* Row 2 */}
-            <div className="justify-content-center" style={{ display: 'flex' }}>
+            <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' ,marginLeft:210}}>
                 {/* Column 1 */}
-                <div style={{ flex: 0.8, marginLeft: 150 }}>
+                <div style={{ flex: 0.8 }}>
                     <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Nguyên Liệu</p>
                     {foodData?.ingredients.map((ingredient) => {
                         return (
