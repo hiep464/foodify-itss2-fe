@@ -90,11 +90,11 @@ function RecipeDetail() {
                         </div>
                     ))
                 ) : (
-                    <p>no comments avaiable</p>
+                    <p>Không có comment</p>
                 )}
                 {visible && (
                 <button className='showmore' onClick={handleShowMore}>
-                    Xem them
+                    Xem thêm
                 </button>
             )}
             </div>

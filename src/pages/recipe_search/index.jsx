@@ -85,7 +85,7 @@ function RecipeSearch() {
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                             {dataPage.map((item, idx) => {
                                 return (
-                                    <Link key={idx} to={`/recipe/${idx}`}>
+                                    <Link key={idx} to={`/recipe/${item.id}`}>
 
                                     <FoodItem
                                         key={idx}
