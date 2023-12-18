@@ -51,6 +51,8 @@ function RecipeDetail() {
 
           if (response.data.current_page == response.data.last_page) {
             setVisible(false); // Nếu không có comment mới, ẩn nút "Show more"
+          } else {
+            setVisible(true);
           }
           
           // if(currentPage>1){
@@ -67,7 +69,8 @@ function RecipeDetail() {
             allComments = [...allComments,...response.data.data]
           }
           setComments({data: allComments})
-          
+          console.log(response.data.current_page)
+          console.log(response.data.last_page)
       } catch (error) {
           console.log(error);
       }

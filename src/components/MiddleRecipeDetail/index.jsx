@@ -9,7 +9,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
     return (
         <div>
             {/* Row 1 */}
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{display: 'flex',marginLeft:'150px', alignItems:'center', marginBottom:'20px'}}>
                 <div className="grid-container" style={{width:'68%'}}>
                     <div className="grid-item">Thời gian chuẩn bị</div>
                     <div className="grid-item">Thời gian nấu</div>
