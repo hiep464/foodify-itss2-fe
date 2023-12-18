@@ -25,7 +25,7 @@ function HeadRpDetail({ name, description, video }) {
                 /> */}
                 <iframe
                     title={name}
-                    width="1100"
+                    width="1060"
                     height="630"
                     src={`https://www.youtube.com/embed/${video?.match(/[?&]v=([^&]+)/)[1]}?feature=oembed`}
                     frameborder="0"
