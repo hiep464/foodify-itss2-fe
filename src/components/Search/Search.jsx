@@ -95,7 +95,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
             </MDBCol>
 
             <MDBCol className="search-box2" style={customColStyle2}>
-                <div className="text-in-search-box">TÌm kiếm món ăn</div>
+                <div className="text-in-search-box">Tìm kiếm món ăn</div>
 
                 <input
                     onChange={(e) => {
