@@ -18,9 +18,9 @@ const MiddleRecipeDetail = ({ foodData }) => {
             </div>
 
             {/* Row 2 */}
-            <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' ,marginLeft:210}}>
+            <div className="justify-content-center" style={{ display: 'flex' }}>
                 {/* Column 1 */}
-                <div style={{ flex: 0.8 }}>
+                <div style={{ flex: 0.8, marginLeft: 210 }}>
                     <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Nguyên Liệu</p>
                     {foodData?.ingredients.map((ingredient) => {
                         return (
