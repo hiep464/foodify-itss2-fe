@@ -5,12 +5,12 @@ import FoodItem from '../../components/FoodItem';
 import Search from '../../components/Search/Search';
 import { baseApi } from '../../constance';
 import { Link } from 'react-router-dom';
+import Pagination from '@mui/material/Pagination';
 
 // import Data from '../../Data';
 const numPage = 6;
 
 function RecipeSearch() {
-    
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [data, setData] = useState([]);
@@ -30,34 +30,34 @@ function RecipeSearch() {
 
     useEffect(() => {
         // setFilterItem([]);
-        var route = baseApi + '/food/search'
-        console.log(name)
+        var route = baseApi + '/food/search';
+        console.log(name);
         // if(name != '' || ingredients != '')
-        route = route + '?name=' + name + '&' + ingredients
-        if(selectedRegion != null){
-            var tmp = selectedRegion + 1
-            route = route + '&region=' + tmp
+        route = route + '?name=' + name + '&' + ingredients;
+        if (selectedRegion != null) {
+            var tmp = selectedRegion + 1;
+            route = route + '&region=' + tmp;
         }
-        if(selectedCategories.length > 0){
+        if (selectedCategories.length > 0) {
             selectedCategories.map((item, idx) => {
-                var tmp = item + 1
-                route = route +  '&categories[]=' + tmp
-            })
+                var tmp = item + 1;
+                route = route + '&categories[]=' + tmp;
+            });
         }
-        console.log(route)
+        console.log(route);
 
         axios.get(route).then((res) => {
             setData(res.data.data);
             setLength(res.data.total);
-            var numberNineArray = Array.from({ length: res.data.last_page }, (_, index) => index + 1);
-            setPageNum(numberNineArray);
-            setPage(1)
+            // var numberNineArray = Array.from({ length: res.data.last_page }, (_, index) => index + 1);
+            setPageNum(res.data.last_page);
+            setPage(1);
             setDataPage(res.data.data);
         });
-    }, [name, ingredients, selectedRegion, selectedCategories ]);
+    }, [name, ingredients, selectedRegion, selectedCategories]);
 
-    const handleChangePage = (item) => {
-        setPage(item);
+    const handleChangePage = (e, val) => {
+        setPage(val);
         // const itemsPerPage = 6;
         // console.log(page, item)
         // const startIndex = (item - 1) * itemsPerPage;
@@ -66,17 +66,22 @@ function RecipeSearch() {
         // // Logic để lấy dữ liệu cho trang hiện tại từ startIndex đến endIndex
         // const currentItems = data.slice(startIndex, endIndex);
         // console.log(currentItems)
-        axios.get(`https://foodify-app-backend.fly.dev/food/search?page=${item}`).then((res) => {
+        axios.get(`https://foodify-app-backend.fly.dev/food/search?page=${val}`).then((res) => {
             setDataPage(res.data.data);
-        })
+        });
     };
     return (
         <>
             <Search name={name} setName={setName} ingredients={ingredients} setIngredients={setIngredients} />
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <div className='row' style={{ width: '80%' }}>
-                    <div style={{width: '35%'}}>
-                        <Filter selectedCategories={selectedCategories} selectedRegion={selectedRegion} setSelectedCategories={setSelectedCategories} setSelectedRegion={setSelectedRegion}/>
+                <div className="row" style={{ width: '80%' }}>
+                    <div style={{ width: '35%' }}>
+                        <Filter
+                            selectedCategories={selectedCategories}
+                            selectedRegion={selectedRegion}
+                            setSelectedCategories={setSelectedCategories}
+                            setSelectedRegion={setSelectedRegion}
+                        />
                     </div>
                     <div style={{ maxWidth: '645px', marginLeft: '4px' }}>
                         <div style={{ fontSize: '30px', fontWeight: '700', color: 'black', margin: '20px 0 20px 0' }}>
@@ -86,19 +91,18 @@ function RecipeSearch() {
                             {dataPage.map((item, idx) => {
                                 return (
                                     <Link key={idx} to={`/recipe/${item.id}`}>
-
-                                    <FoodItem
-                                        key={idx}
-                                        image={item?.thumbnail}
-                                        time={item?.cooking_time}
-                                        description={item?.name}
-                                    />
+                                        <FoodItem
+                                            key={idx}
+                                            image={item?.thumbnail}
+                                            time={item?.cooking_time}
+                                            description={item?.name}
+                                        />
                                     </Link>
                                 );
                             })}
                         </div>
                         <div style={{ width: '100%', display: 'flex', justifyContent: 'center', margin: '60px 0' }}>
-                            {pageNum.map((item, idx) => {
+                            {/* {pageNum.map((item, idx) => {
                                 var check = item === page;
                                 return (
                                     <div
@@ -124,7 +128,23 @@ function RecipeSearch() {
                                         <span>{item}</span>
                                     </div>
                                 );
-                            })}
+                            })} */}
+                            <Pagination
+                                count={pageNum}
+                                page={page}
+                                variant="outlined"
+                                sx={{
+                                    '& .MuiPaginationItem-page.Mui-selected': {
+                                        backgroundColor: 'rgba(255, 100, 47, 1)', // Màu nền của trang hiện tại
+                                        color: 'white', // Màu chữ của trang hiện tại
+                                        border: 'none',
+                                    },
+                                    '& .MuiPaginationItem-root': {
+                                        borderColor: 'black', // Màu chữ của nút "lên" và "xuống"
+                                    },
+                                }}
+                                onChange={handleChangePage}
+                            />
                         </div>
                     </div>
                 </div>
