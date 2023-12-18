@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { MDBRow, MDBCol } from 'mdbreact';
-import './Search.css';
+import { MDBCol, MDBRow } from 'mdbreact';
+import React, { useState } from 'react';
+
 import PopupSearch from './PopupSearch/PopupSearch';
+
+import './Search.css';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [selectedWords, setSelectedWords] = useState([]);
@@ -17,7 +19,6 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         // setInputValue(value);
         setIngredients(value)
     };
-
 
     const handleDeleteWord = (index) => {
         const updatedWords = [...selectedWords];
@@ -95,7 +96,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
             </MDBCol>
 
             <MDBCol className="search-box2" style={customColStyle2}>
-                <div className="text-in-search-box">TÌm kiếm món ăn</div>
+                <div className="text-in-search-box">Tìm kiếm món ăn</div>
 
                 <input
                     onChange={(e) => {

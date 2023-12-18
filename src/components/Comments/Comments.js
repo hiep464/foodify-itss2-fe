@@ -9,6 +9,7 @@ const Comments = ({ foodId , onCommentSubmit}) => {
     const [username, setUserName] = useState('');
     const [content, setContent] = useState('');
     const [error, setError] = useState('');
+
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
@@ -32,7 +33,7 @@ const Comments = ({ foodId , onCommentSubmit}) => {
             onCommentSubmit();
             setUserName('');
             setContent('');
-            
+            setError('');
         } catch (error) {
             console.log(error);
         }
@@ -47,6 +48,7 @@ const Comments = ({ foodId , onCommentSubmit}) => {
                     <button className='submit-control btn' type='submit' onClick={handleSubmit}>Bình luận</button>
                 </div>
             </form>
+            {error && <p className='error-message'>{error}</p>}
         </div>
     );
 }
