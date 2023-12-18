@@ -41,9 +41,9 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
 
     const customColStyle2 = {
         flex: '0 0 80%',
-        maxWidth: '46.2%',
+        maxWidth: '45%',
         backgroundColor: '#FF642F',
-        marginRight: '35px',
+        marginRight: '47px',
         marginTop: '80px',
         height: '90px',
         display: 'flex',
