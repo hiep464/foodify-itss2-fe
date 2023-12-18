@@ -1,0 +1,30 @@
+.comments{
+    margin-left: 220px;
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+.comments input{
+    max-width: 400px;
+    background:#EEEEEE;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.comments textarea{
+    background: #EEEEEE;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    height: 129px;
+}
+
+.comments button{
+    color: white;
+    background-color:#FF642F;
+    max-width: 200px;
+    float: right;
+    margin-left: auto;
+    font-size: 15px;
+}
