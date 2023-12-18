@@ -18,46 +18,57 @@ function RecipeSearch() {
     const [length, setLength] = useState([]);
     const [page, setPage] = useState(1);
     const [pageNum, setPageNum] = useState([]);
+    // const [region, setRegion] = useState(null);
+    // const [category, setCategory] = useState(null);
+    const [selectedCategories, setSelectedCategories] = useState([]);
+    const [selectedRegion, setSelectedRegion] = useState(null);
 
-    const [filteredItem, setFilterItem] = useState([]);
-    const handleFilterChange = (filteredData) => {
-        setFilterItem(filteredData);
-    };
+    // const [filteredItem, setFilterItem] = useState([]);
+    // const handleFilterChange = (filteredData) => {
+    //     setFilterItem(filteredData);
+    // };
 
     useEffect(() => {
-        setFilterItem([]);// 
+        // setFilterItem([]);
         var route = baseApi + '/food/search'
         console.log(name)
-        if(name != '' || ingredients != '')
-            route = route + '?name=' + name + '&' + ingredients
+        // if(name != '' || ingredients != '')
+        route = route + '?name=' + name + '&' + ingredients
+        if(selectedRegion != null){
+            var tmp = selectedRegion + 1
+            route = route + '&region=' + tmp
+        }
+        if(selectedCategories.length > 0){
+            selectedCategories.map((item, idx) => {
+                var tmp = item + 1
+                route = route +  '&categories[]=' + tmp
+            })
+        }
+        console.log(route)
+
         axios.get(route).then((res) => {
-            setData(res.data);
-            setLength(res.data.length);
-            var num = 0
-            if(res.data.length / numPage === 0)
-                num = res.data.length / numPage ;
-            else
-                num = res.data.length / numPage + 1;
-            var numberNineArray = Array.from({ length: num }, (_, index) => index + 1);
+            setData(res.data.data);
+            setLength(res.data.total);
+            var numberNineArray = Array.from({ length: res.data.last_page }, (_, index) => index + 1);
             setPageNum(numberNineArray);
-            const currentItems = res.data.data?.slice(0,6);
-            console.log(currentItems);
             setPage(1)
-            setDataPage(currentItems);
+            setDataPage(res.data.data);
         });
-    }, [name, ingredients]);
+    }, [name, ingredients, selectedRegion, selectedCategories ]);
 
     const handleChangePage = (item) => {
         setPage(item);
-        const itemsPerPage = 6;
-        console.log(page, item)
-        const startIndex = (item - 1) * itemsPerPage;
-        const endIndex = Math.min(startIndex + itemsPerPage, length);
+        // const itemsPerPage = 6;
+        // console.log(page, item)
+        // const startIndex = (item - 1) * itemsPerPage;
+        // const endIndex = Math.min(startIndex + itemsPerPage, length);
 
-        // Logic để lấy dữ liệu cho trang hiện tại từ startIndex đến endIndex
-        const currentItems = data.slice(startIndex, endIndex);
-        console.log(currentItems)
-        setDataPage(currentItems);
+        // // Logic để lấy dữ liệu cho trang hiện tại từ startIndex đến endIndex
+        // const currentItems = data.slice(startIndex, endIndex);
+        // console.log(currentItems)
+        axios.get(`https://foodify-app-backend.fly.dev/food/search?page=${item}`).then((res) => {
+            setDataPage(res.data.data);
+        })
     };
     return (
         <>
@@ -65,7 +76,7 @@ function RecipeSearch() {
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <div className='row' style={{ width: '80%' }}>
                     <div style={{width: '35%'}}>
-                        <Filter data={data} onFilterChange={handleFilterChange} />
+                        <Filter selectedCategories={selectedCategories} selectedRegion={selectedRegion} setSelectedCategories={setSelectedCategories} setSelectedRegion={setSelectedRegion}/>
                     </div>
                     <div style={{ maxWidth: '645px', marginLeft: '4px' }}>
                         <div style={{ fontSize: '30px', fontWeight: '700', color: 'black', margin: '20px 0 20px 0' }}>
