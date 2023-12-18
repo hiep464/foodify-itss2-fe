@@ -47,23 +47,27 @@ function RecipeDetail() {
     }, [foodId, currentPage]);
     const fetchComments = async () => {
       try {
-          const response = await axios.get(baseApi + `/food/${foodId}/comments?page=${currentPage}&page_size=2`);
+          const response = await axios.get(baseApi + `/food/${foodId}/comments?page=${currentPage}&page_size=4`);
 
           if (response.data.current_page == response.data.last_page) {
             setVisible(false); // Nếu không có comment mới, ẩn nút "Show more"
           }
           
-        //   setComments(prevComments => [
-        //     ...prevComments,
-        //     ...response.data.data,
-        // ]);
-          if(currentPage>1){
-            setComments(prevComments => ({
-              data: [...prevComments.data, ...response.data.data],
-              current_page: response.data.current_page,
-              last_page: response.data.last_page,
-          }));
-          } else {setComments(response.data);}
+          // if(currentPage>1){
+          //   setComments(prevComments => ({
+          //     data: [...prevComments.data, ...response.data.data],
+          //     current_page: response.data.current_page,
+          //     last_page: response.data.last_page,
+          // }));
+          // } else {setComments(response.data);}
+          let allComments = [];
+          for( let page = 1; page <= currentPage;page++)
+          {
+            const response = await axios.get(baseApi + `/food/${foodId}/comments?page=${page}&page_size=4`)
+            allComments = [...allComments,...response.data.data]
+          }
+          setComments({data: allComments})
+          
       } catch (error) {
           console.log(error);
       }
