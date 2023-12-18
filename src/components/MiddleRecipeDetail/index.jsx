@@ -68,6 +68,50 @@ const MiddleRecipeDetail = ({ foodData }) => {
                     })}
                 </div>
             </div>
+            {/* Row3 */}
+            <div className='justify-content-center comments'>
+                <div className='row form-input'>
+                        <input type='text' className='input-name' placeholder='Nhap ten cua ban...'/>
+                        <textarea className='input-content'  placeholder='Binh luan...'/>
+
+                    <button className='submit-control  btn '  type='submit'>
+                            Binh luan
+                    </button>
+                </div>
+
+                <div className='list-comment'>
+                    <div className='cmt row'>
+                        <div className=''>
+                            <div className='username'>Hoang Anh Tuan</div>
+                            <div className='time'>45 phut truoc</div>
+                        </div>
+                        <div className='content'>Cong thuc huong dan rat chi tiet</div>
+                    </div>
+                    <div className='cmt row'>
+                        <div className=''>
+                            <div className='username'>Hoang Anh Tuan</div>
+                            <div className='time'>45 phut truoc</div>
+                        </div>
+                        <div className='content'>Cong thuc huong dan rat chi tiet</div>
+                    </div>
+
+                    <div className='cmt row'>
+                        <div className=''>
+                            <div className='username'>Hoang Anh Tuan</div>
+                            <div className='time'>45 phut truoc</div>
+                        </div>
+                        <div className='content'>Cong thuc huong dan rat chi tiet</div>
+                    </div>
+
+                    <div className='cmt row'>
+                        <div className=''>
+                            <div className='username'>Hoang Anh Tuan</div>
+                            <div className='time'>45 phut truoc</div>
+                        </div>
+                        <div className='content'>Cong thuc huong dan rat chi tiet</div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
