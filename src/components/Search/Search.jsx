@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { MDBRow, MDBCol } from 'mdbreact';
-import './Search.css';
+import { MDBCol, MDBRow } from 'mdbreact';
+import React, { useState } from 'react';
+
 import PopupSearch from './PopupSearch/PopupSearch';
+
+import './Search.css';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [selectedWords, setSelectedWords] = useState([]);
@@ -17,7 +19,6 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         // setInputValue(value);
         setIngredients(value)
     };
-
 
     const handleDeleteWord = (index) => {
         const updatedWords = [...selectedWords];

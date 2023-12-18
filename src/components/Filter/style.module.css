@@ -5,6 +5,7 @@
     font-size: 19px;
     position: relative;
     /* z-index: -1; */
+    max-width: 300px;
 }
 .title{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
