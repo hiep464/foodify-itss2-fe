@@ -10,7 +10,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleSearchInputChange = (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter'&&inputValue.trim()!='') {
        // const word = event.target.value;
         setSelectedWords(!selectedWords.includes(inputValue) ? [...selectedWords, inputValue] : [...selectedWords]);
         setIngredients(!selectedWords.includes(inputValue) ? [...selectedWords, inputValue] : [...selectedWords]);
