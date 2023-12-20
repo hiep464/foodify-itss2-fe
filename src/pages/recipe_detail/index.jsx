@@ -1,5 +1,6 @@
 import axios from 'axios';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import vi from 'date-fns/locale/vi';
 import parseISO from 'date-fns/parseISO';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -24,7 +25,7 @@ function RecipeDetail() {
 
     const calculateTimeAgo = (timestamp) => {
       const parsedTime = parseISO(timestamp);
-      return formatDistanceToNow(parsedTime, { addSuffix: true });
+      return formatDistanceToNow(parsedTime, {locale:vi, addSuffix: true });
   };
 
     useEffect(() => {
