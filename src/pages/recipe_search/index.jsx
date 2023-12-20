@@ -13,7 +13,6 @@ const numPage = 6;
 function RecipeSearch() {
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState([]);
-    const [data, setData] = useState([]);
     const [dataPage, setDataPage] = useState([]);
     const [length, setLength] = useState([]);
     const [page, setPage] = useState(1);
@@ -29,14 +28,14 @@ function RecipeSearch() {
     // };
 
     useEffect(() => {
+        let ignore = false;
         // setFilterItem([]);
         var route = baseApi + '/food/search';
         console.log(name);
         // if(name != '' || ingredients != '')
         var arrIngredients = '';
         ingredients.forEach((item, index) => {
-            if(item.trim() != '')
-            arrIngredients += (index > 0 ? '&' : '') + 'ingredients[]=' + item;
+            if (item.trim() != '') arrIngredients += (index > 0 ? '&' : '') + 'ingredients[]=' + item;
         });
         route = route + '?name=' + name + '&' + arrIngredients;
         if (selectedRegion != null) {
@@ -52,29 +51,24 @@ function RecipeSearch() {
         console.log(route);
 
         axios.get(route).then((res) => {
-            // setData(res.data.data);
-            setLength(res.data.total);
-            // var numberNineArray = Array.from({ length: res.data.last_page }, (_, index) => index + 1);
-            setPageNum(res.data.last_page);
-            setPage(1);
-            setDataPage(res.data.data);
+            if (!ignore) {
+                setLength(res.data.total);
+                setPageNum(res.data.last_page);
+                setPage(1);
+                setDataPage((prev) => {
+                    return res.data.data;
+                });
+            }
         });
 
-        return () =>{
-            
-        }
+        return () => {
+            ignore = true;
+            return true;
+        };
     }, [name, ingredients, selectedRegion, selectedCategories]);
 
     const handleChangePage = (e, val) => {
         setPage(val);
-        // const itemsPerPage = 6;
-        // console.log(page, item)
-        // const startIndex = (item - 1) * itemsPerPage;
-        // const endIndex = Math.min(startIndex + itemsPerPage, length);
-
-        // // Logic để lấy dữ liệu cho trang hiện tại từ startIndex đến endIndex
-        // const currentItems = data.slice(startIndex, endIndex);
-        // console.log(currentItems)
         axios.get(`https://foodify-app-backend.fly.dev/food/search?page=${val}`).then((res) => {
             setDataPage(res.data.data);
         });
@@ -97,7 +91,8 @@ function RecipeSearch() {
                             Có {length} công thức nấu ăn
                         </div>
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                            {dataPage.map((item, idx) => {
+                            {console.log(dataPage)}
+                            {dataPage?.map((item, idx) => {
                                 return (
                                     <Link key={idx} to={`/recipe/${item.id}`}>
                                         <FoodItem
@@ -138,27 +133,26 @@ function RecipeSearch() {
                                     </div>
                                 );
                             })} */}
-                            {
-                                dataPage.length === 0 ?  "" :
-                                (
-                                    <Pagination
-                                        count={pageNum}
-                                        page={page}
-                                        variant="outlined"
-                                        sx={{
-                                            '& .MuiPaginationItem-page.Mui-selected': {
-                                                backgroundColor: 'rgba(255, 100, 47, 1)', // Màu nền của trang hiện tại
-                                                color: 'white', // Màu chữ của trang hiện tại
-                                                border: 'none',
-                                            },
-                                            '& .MuiPaginationItem-root': {
-                                                borderColor: 'black', // Màu chữ của nút "lên" và "xuống"
-                                            },
-                                        }}
-                                        onChange={handleChangePage}
-                                    />
-                                )
-                            }
+                            {dataPage.length === 0 ? (
+                                ''
+                            ) : (
+                                <Pagination
+                                    count={pageNum}
+                                    page={page}
+                                    variant="outlined"
+                                    sx={{
+                                        '& .MuiPaginationItem-page.Mui-selected': {
+                                            backgroundColor: 'rgba(255, 100, 47, 1)', // Màu nền của trang hiện tại
+                                            color: 'white', // Màu chữ của trang hiện tại
+                                            border: 'none',
+                                        },
+                                        '& .MuiPaginationItem-root': {
+                                            borderColor: 'black', // Màu chữ của nút "lên" và "xuống"
+                                        },
+                                    }}
+                                    onChange={handleChangePage}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@ const Filter = ({ selectedCategories, selectedRegion,  setSelectedCategories, se
   // useEffect(() => {
   //   filterItem();
   // }, [selectedCategories, selectedRegion, onFilterChange]);
-  console.log(selectedCategories, selectedRegion)
+  // console.log(selectedCategories, selectedRegion)
   return (
     <div className={styles.container}>
       <div className={styles.title}>
