@@ -1,5 +1,3 @@
-import image from '../../acess/menu144.jpg.png';
-import vector from '../../acess/Vector.png';
 
 function HeadRpDetail({ name, description, video }) {
     return (
@@ -27,7 +25,7 @@ function HeadRpDetail({ name, description, video }) {
                 /> */}
                 <iframe
                     title={name}
-                    width="100%"
+                    width="1060"
                     height="630"
                     src={`https://www.youtube.com/embed/${video?.match(/[?&]v=([^&]+)/)[1]}?feature=oembed`}
                     frameborder="0"
