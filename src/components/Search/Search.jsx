@@ -7,17 +7,20 @@ import './Search.css';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [selectedWords, setSelectedWords] = useState([]);
-    // const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState('');
 
-    const handleSearchInputChange = (word) => {
-        setSelectedWords(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
-        // setInputValue('');
-        setIngredients(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
+    const handleSearchInputChange = (event) => {
+        if (event.key === 'Enter') {
+       // const word = event.target.value;
+        setSelectedWords(!selectedWords.includes(inputValue) ? [...selectedWords, inputValue] : [...selectedWords]);
+        setIngredients(!selectedWords.includes(inputValue) ? [...selectedWords, inputValue] : [...selectedWords]);
+        setInputValue('');
+        }
     };
 
     const handleInputChange = (value) => {
-        // setInputValue(value);
-        setIngredients(value)
+         setInputValue(value);
+       // setIngredients(value)
     };
 
     const handleDeleteWord = (index) => {
@@ -55,7 +58,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
     const selectedWordsStyle = {
         marginTop: '5px',
         width: '25%',
-        marginRight: '700px',
+        marginRight: '790px',
         display: 'flex',
         flexWrap: 'wrap',
         padding: '5px', // Adjust padding for better spacing
@@ -82,17 +85,12 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
                     className="form-control"
                     type="text"
                     placeholder="Nhập tên nguyên liệu"
-                    value={ingredients}
+                    value={inputValue}
                     onChange={(e) => handleInputChange(e.target.value)}
+                    onKeyDown={(e)=> handleSearchInputChange(e)}
                     aria-label="Search"
                 />
-                <PopupSearch
-                    isOpen={!!ingredients}
-                    inputValue={ingredients}
-                    words={['Tôm', 'Hành', 'Tỏi', 'Cá', 'Sườn heo']}
-                    onSelect={handleSearchInputChange}
-                    onClose={() => setIngredients('')}
-                />
+              
             </MDBCol>
 
             <MDBCol className="search-box2" style={customColStyle2}>
