@@ -2,7 +2,7 @@ import clock from '../../acess/clock.png';
 
 function FoodItem({ image, time, description }) {
     return (
-      
+
         <div style={{ maxWidth: '315px', marginRight: '10px', marginBottom:'20px'}}>
             <img style={{ width:'300px',maxWidth: '300px', height: '214px',borderRadius: '15px' }} src={image} alt="" />
             <div style={{ display: 'flex', alignItems: 'center', height: '42px' }}>
