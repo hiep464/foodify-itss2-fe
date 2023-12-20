@@ -23,7 +23,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
             {/* Row 2 */}
             <div className="justify-content-center" style={{ display: 'flex' }}>
                 {/* Column 1 */}
-                <div style={{ flex: 0.8, marginLeft: 210 }}>
+                <div style={{ width:'45%', marginLeft: 132 }}>
                     <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Nguyên Liệu</p>
                     {foodData?.ingredients.map((ingredient) => {
                         return (
@@ -39,7 +39,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
                 </div>
 
                 {/* Column 2 */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{  display: 'flex', flexDirection: 'column' ,width:'33%'}}>
                     <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Công Thức</p>
                     {foodData?.steps.map((step) => {
                         return (
