@@ -12,7 +12,7 @@ const numPage = 6;
 
 function RecipeSearch() {
     const [name, setName] = useState('');
-    const [ingredients, setIngredients] = useState('');
+    const [ingredients, setIngredients] = useState([]);
     const [data, setData] = useState([]);
     const [dataPage, setDataPage] = useState([]);
     const [length, setLength] = useState([]);
@@ -33,7 +33,12 @@ function RecipeSearch() {
         var route = baseApi + '/food/search';
         console.log(name);
         // if(name != '' || ingredients != '')
-        route = route + '?name=' + name + '&' + ingredients;
+        var arrIngredients = '';
+        ingredients.forEach((item, index) => {
+            if(item.trim() != '')
+            arrIngredients += (index > 0 ? '&' : '') + 'ingredients[]=' + item;
+        });
+        route = route + '?name=' + name + '&' + arrIngredients;
         if (selectedRegion != null) {
             var tmp = selectedRegion + 1;
             route = route + '&region=' + tmp;
