@@ -12,6 +12,7 @@ const numPage = 6;
 
 function RecipeSearch() {
     const [name, setName] = useState('');
+    const [path, setPath] = useState('https://foodify-app-backend.fly.dev/food/search');
     const [ingredients, setIngredients] = useState([]);
     const [dataPage, setDataPage] = useState([]);
     const [length, setLength] = useState([]);
@@ -49,7 +50,7 @@ function RecipeSearch() {
             });
         }
         console.log(route);
-
+        setPath(route)
         axios.get(route).then((res) => {
             if (!ignore) {
                 setLength(res.data.total);
@@ -69,7 +70,7 @@ function RecipeSearch() {
 
     const handleChangePage = (e, val) => {
         setPage(val);
-        axios.get(`https://foodify-app-backend.fly.dev/food/search?page=${val}`).then((res) => {
+        axios.get(`${path}&page=${val}`).then((res) => {
             setDataPage(res.data.data);
         });
     };
