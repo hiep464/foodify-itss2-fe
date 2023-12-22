@@ -11,12 +11,12 @@ function HeadRpDetail({ name, description, video }) {
                 flexDirection: 'column',
             }}
         >
-            <div style={{ width: '68%' }}>
+            <div style={{ width: '80%' }}>
                 <div style={{ fontSize: '40px', fontWeight: '700', color: 'black' }}>{name}</div>
             </div>
-            <div style={{ width: '68%', border: '1px solid rgba(0, 0, 0, 0.1)', marginTop: '20px' }}></div>
-            <div style={{ width: '68%', margin: '30px 0' }}>{description}</div>
-            <div style={{ width: '68%', position: 'relative', marginBottom: '30px' }}>
+            <div style={{ width: '80%', border: '1px solid rgba(0, 0, 0, 0.1)', marginTop: '20px' }}></div>
+            <div style={{ width: '80%', margin: '30px 0' }}>{description}</div>
+            <div style={{ width: '80%', position: 'relative', marginBottom: '30px' }}>
                 {/* <img style={{ width: '100%', borderRadius: '12px' }} src={image} alt="" />
                 <img
                     style={{ position: 'absolute', top: 'calc(50% - 43px)', left: 'calc(50% - 53px)' }}
@@ -25,7 +25,7 @@ function HeadRpDetail({ name, description, video }) {
                 /> */}
                 <iframe
                     title={name}
-                    width="1060"
+                    width="100%"
                     height="630"
                     src={`https://www.youtube.com/embed/${video?.match(/[?&]v=([^&]+)/)[1]}?feature=oembed`}
                     frameborder="0"
