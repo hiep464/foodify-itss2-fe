@@ -1,8 +1,6 @@
 import { MDBCol, MDBRow } from 'mdbreact';
 import React, { useState } from 'react';
 
-import PopupSearch from './PopupSearch/PopupSearch';
-
 import './Search.css';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
@@ -30,26 +28,27 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         setIngredients(updatedWords);
     };
     const customColStyle = {
-        flex: '0 0 80%',
-        maxWidth: '25.5%',
+        // flex: '0 0 80%',
+        maxWidth: '26%',
         backgroundColor: '#FF642F',
         marginTop: '80px',
         marginRight: '30px',
-        height: '90px',
+        height: '130px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
+        
     };
 
     const customColStyle2 = {
-        flex: '0 0 80%',
-        maxWidth: '46.5%',
+        // flex: '0 0 80%',
+        maxWidth: '48.5%',
         backgroundColor: '#FF642F',
-        marginRight: '32px',
+        // marginRight: '32px',
         marginTop: '80px',
-        height: '90px',
+        height: '130px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
         justifyContent: 'center',
@@ -77,7 +76,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
     };
 
     return (
-        <MDBRow className="justify-content-center" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <MDBRow className="justify-content-center" style={{ display: 'flex', flexWrap: 'wrap', }}>
             <MDBCol className="search-box1" style={customColStyle}>
                 <div className="text-in-search-box">Tìm kiếm nguyên liệu</div>
 

@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import Pagination from '@mui/material/Pagination';
 import Filter from '../../components/Filter/Filter';
 import FoodItem from '../../components/FoodItem';
 import Search from '../../components/Search/Search';
 import { baseApi } from '../../constance';
-import { Link } from 'react-router-dom';
-import Pagination from '@mui/material/Pagination';
 
 // import Data from '../../Data';
 const numPage = 6;
@@ -86,11 +87,11 @@ function RecipeSearch() {
                             setSelectedRegion={setSelectedRegion}
                         />
                     </div>
-                    <div style={{ maxWidth: '645px', marginLeft: '4px' }}>
+                    <div style={{ maxWidth:'660px', marginLeft: '10px' }}>
                         <div style={{ fontSize: '30px', fontWeight: '700', color: 'black', margin: '20px 0 20px 0' }}>
                             Có {length} công thức nấu ăn
                         </div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                        <div className='gap-4' style={{ display: 'flex', flexWrap: 'wrap'}}>
                             {console.log(dataPage)}
                             {dataPage?.map((item, idx) => {
                                 return (

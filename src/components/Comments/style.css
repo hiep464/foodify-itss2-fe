@@ -1,12 +1,15 @@
 .comments{
-    margin-left: 220px;
+    margin-left: 140px;
     margin-top: 30px;
     font-size: 20px;
     margin-right: 12px;
+    width: 80%;
+    justify-content: center;
+    max-width: 1000px;
   }
 
 .comments input{
-    max-width: 400px;
+    max-width: 450px;
     background:#EEEEEE;
     margin-bottom: 20px;
     border-radius: 5px;

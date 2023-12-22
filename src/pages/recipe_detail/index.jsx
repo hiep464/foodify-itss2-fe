@@ -55,14 +55,6 @@ function RecipeDetail() {
           } else {
             setVisible(true);
           }
-          
-          // if(currentPage>1){
-          //   setComments(prevComments => ({
-          //     data: [...prevComments.data, ...response.data.data],
-          //     current_page: response.data.current_page,
-          //     last_page: response.data.last_page,
-          // }));
-          // } else {setComments(response.data);}
           let allComments = [];
           for( let page = 1; page <= currentPage;page++)
           {
