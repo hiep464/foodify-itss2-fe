@@ -3,19 +3,20 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import './Footer.css'; 
+import logo from '../../acess/logo.png';
 const Footer = () => {
     return (
-        <MDBFooter bgColor='#F9F9F9' className='small text-center text-lg-start '>
+        <MDBFooter bgColor='#F9F9F9' className='small text-center text-lg-start ' >
           <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
           </section>
     
-          <section className=''>
-            <MDBContainer className='text-center text-md-start mt-5'>
+          <section className='' >
+            <MDBContainer className='text-center text-md-start mt-5' style={{marginLeft:420}}>
               <MDBRow className='mt-3'>
                 <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                   <h6 className='text-with-shadow  fw-bold mb-4'>
                     
-                  Foodify </h6>
+                  <img src={logo} alt="" /> </h6>
                   <p>
                   On the other hand, we denounce with righteous indignation and dislike men who are so beguiled 
                   and demoralized by the charms of pleasure of the moment
