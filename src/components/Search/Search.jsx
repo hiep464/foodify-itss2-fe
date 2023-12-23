@@ -1,6 +1,6 @@
 import { MDBCol, MDBRow } from 'mdbreact';
 import React, { useState } from 'react';
-
+import PopupSearch from './PopupSearch/PopupSearch';
 import './Search.css';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
