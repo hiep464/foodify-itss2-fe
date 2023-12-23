@@ -32,7 +32,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
                                     src={bulletPoint}
                                     style={{ marginLeft: 5, marginRight: 30, marginBottom: 2 }}
                                 ></img>
-                                {ingredient.description}
+                                {ingredient.quantity + " " + ingredient.name}
                             </div>
                         );
                     })}

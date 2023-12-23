@@ -1,24 +1,24 @@
 import { MDBCol, MDBRow } from 'mdbreact';
 import React, { useState } from 'react';
-
+import PopupSearch from './PopupSearch/PopupSearch';
 import './Search.css';
 
 const Search = ({ name, setName, ingredients, setIngredients }) => {
     const [selectedWords, setSelectedWords] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
-    const handleSearchInputChange = (event) => {
-        if (event.key === 'Enter'&&inputValue.trim()!='') {
-       // const word = event.target.value;
-        setSelectedWords(!selectedWords.includes(inputValue) ? [...selectedWords, inputValue] : [...selectedWords]);
-        setIngredients(!selectedWords.includes(inputValue) ? [...selectedWords, inputValue] : [...selectedWords]);
+    const handleSearchInputChange = (word) => {
+        // if (event.key === 'Enter' && inputValue.trim() != '') {
+        // const word = event.target.value;
+        setSelectedWords(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
+        setIngredients(!selectedWords.includes(word) ? [...selectedWords, word] : [...selectedWords]);
         setInputValue('');
-        }
+        // }
     };
 
     const handleInputChange = (value) => {
-         setInputValue(value);
-       // setIngredients(value)
+        setInputValue(value);
+        // setIngredients(value)
     };
 
     const handleDeleteWord = (index) => {
@@ -33,7 +33,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         backgroundColor: '#FF642F',
         marginTop: '80px',
         marginRight: '30px',
-        height: '130px',
+        height: '150px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
         justifyContent: 'center',
@@ -44,11 +44,11 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
 
     const customColStyle2 = {
         // flex: '0 0 80%',
-        maxWidth: '48.5%',
+        maxWidth: '47.5%',
         backgroundColor: '#FF642F',
-        // marginRight: '32px',
+         marginRight: '21px',
         marginTop: '80px',
-        height: '130px',
+        height: '150px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
         justifyContent: 'center',
@@ -86,10 +86,57 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
                     placeholder="Nhập tên nguyên liệu"
                     value={inputValue}
                     onChange={(e) => handleInputChange(e.target.value)}
-                    onKeyDown={(e)=> handleSearchInputChange(e)}
+                    // onKeyDown={(e)=> handleSearchInputChange(e)}
                     aria-label="Search"
                 />
-              
+
+                <PopupSearch
+                    isOpen={!!inputValue}
+                    inputValue={inputValue}
+                    words={[
+                        'Cà chua',
+                        'Hành',
+                        'Tỏi',
+                        'Gừng',
+                        'Cà rốt',
+                        'Bơ',
+                        'Cần tây',
+                        'Rau cải xanh',
+                        'Rau mùi',
+                        'Ớt',
+                        'muối',
+                        'tiêu',
+                        'đường',
+                        'Dầu ăn',
+                        'Bột nêm',
+                        'Sốt nấu ăn',
+                        'Gạo',
+                        'Mỳ ý',
+                        'Bún',
+                        'Bún phở',
+                        'Đậu hủ',
+                        'Đậu nành',
+                        'gà',
+                        'bò',
+                        'lợn',
+                        'Cá',
+                        'Tôm',
+                        'Trứng',
+                        'Xúc xích',
+                        'Nước mắm',
+                        'Tương ớt',
+                        'Sốt soya',
+                        'Dầu giấm',
+                        'Rượu trắng',
+                        'Bột mỳ',
+                        'Đường',
+                        'Bơ',
+                        'Trứng',
+                        'Bột nở',
+                    ]}
+                    onSelect={handleSearchInputChange}
+                    onClose={() => setInputValue('')}
+                />
             </MDBCol>
 
             <MDBCol className="search-box2" style={customColStyle2}>
