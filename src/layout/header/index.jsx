@@ -1,9 +1,18 @@
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../acess/logo.png';
 import home from '../../acess/Home.png';
+import homeColor from '../../acess/home-color.png';
+import searchColor from '../../acess/Search-color.png';
 import search from '../../acess/Search.png';
-import { Link } from 'react-router-dom';
+
 
 function Header() {
+    const location = useLocation();
+
+    const isHomeActive = location.pathname === '/home';
+    const isSearchActive = location.pathname === '/';
+
     return (
         <div
             style={{
@@ -13,18 +22,36 @@ function Header() {
                 display: 'flex',
                 alignItems: 'center',
             }}
-        >
+        >  <Link to="/home">
             <img style={{ margin: '0 270px 0 200px' }} src={logo} alt="" />
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={home} alt="" />
-                <span style={{ fontWeight: '700', fontSize: '22px', marginLeft: '4px', color: 'black' }}>Trang Chủ</span>
+            </Link>
+            <div style={{ display: 'flex' ,alignItems: 'center' }}>
+                <Link
+                    to="/home"
+                    style={{
+                        textDecoration: 'none',
+                        color: isHomeActive ? 'rgba(255, 100, 47, 1)' : 'black',
+                        display: 'flex',
+                        alignItems: 'center' 
+                    }}
+                >
+                    <img src={isHomeActive ? homeColor:home} alt="" />
+                    <span style={{ fontWeight: '700', fontSize: '22px', marginLeft: '4px' }}>Trang Chủ</span>
+                </Link>
             </div>
-            <Link style={{textDecoration: 'none', color: 'rgba(255, 100, 47, 1)'}} to={'/'}>
-                <div style={{ display: 'flex', alignItems: 'center' }} >
-                    <img style={{ marginLeft: '184px' }} src={search} alt="" />{' '}
-                    <span style={{ fontWeight: '700', fontSize: '22px', marginLeft: '4px'  }}>Tìm kiếm</span>
+            <Link
+                to="/"
+                style={{
+                    textDecoration: 'none',
+                    color: isSearchActive ? 'rgba(255, 100, 47, 1)' : 'black',
+                }}
+            >
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img style={{ marginLeft: '184px' }} src={isSearchActive ? searchColor:search} alt="" />{' '}
+                    <span style={{ fontWeight: '700', fontSize: '22px', marginLeft: '4px' }}>Tìm kiếm</span>
                 </div>
             </Link>
+           
         </div>
     );
 }
