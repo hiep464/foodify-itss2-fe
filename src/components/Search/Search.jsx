@@ -33,7 +33,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         backgroundColor: '#FF642F',
         marginTop: '80px',
         marginRight: '30px',
-        height: '130px',
+        height: '150px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
         justifyContent: 'center',
@@ -44,11 +44,11 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
 
     const customColStyle2 = {
         // flex: '0 0 80%',
-        maxWidth: '48.5%',
+        maxWidth: '47.5%',
         backgroundColor: '#FF642F',
-        // marginRight: '32px',
+         marginRight: '21px',
         marginTop: '80px',
-        height: '130px',
+        height: '150px',
         display: 'flex',
         flexDirection: 'column', // Display children in a column layout
         justifyContent: 'center',
