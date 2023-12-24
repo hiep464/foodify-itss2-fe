@@ -10,8 +10,6 @@
 .mostFood:hover .imageFood{order: 2 !important;}
 .mostFood:hover .title{order: 1 !important;}
 
-  
-  
   .imageFood {
     border-right: 10px;
     max-height: 380px;
