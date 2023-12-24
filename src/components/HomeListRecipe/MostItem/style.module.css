@@ -5,13 +5,16 @@
     max-height: 380px;
     margin-top: 50px;
     height: 380px;
-  }
-  
+    padding-right: 40px;
+}
+.mostFood:hover .imageFood{order: 2 !important;}
+.mostFood:hover .title{order: 1 !important;}
+
   .imageFood {
     border-right: 10px;
     max-height: 380px;
     max-width: 600px;
-    width: 864px;
+    width: 600px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }

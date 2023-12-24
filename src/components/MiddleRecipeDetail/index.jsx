@@ -27,7 +27,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
                     <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Nguyên Liệu</p>
                     {foodData?.ingredients.map((ingredient) => {
                         return (
-                            <div style={{ marginTop: 30, fontSize: 18, color: 'black' }}>
+                            <div style={{ marginTop: 10, fontSize: 18, color: 'black' }}>
                                 <img
                                     src={bulletPoint}
                                     style={{ marginLeft: 5, marginRight: 30, marginBottom: 2 }}
