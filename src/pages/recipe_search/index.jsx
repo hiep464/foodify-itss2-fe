@@ -15,6 +15,7 @@ function RecipeSearch() {
     const [name, setName] = useState('');
     const [path, setPath] = useState('https://foodify-app-backend.fly.dev/food/search');
     const [ingredients, setIngredients] = useState([]);
+    const [ingredient, setIngredient] = useState({});
     const [dataPage, setDataPage] = useState([]);
     const [length, setLength] = useState([]);
     const [page, setPage] = useState(1);
@@ -69,6 +70,24 @@ function RecipeSearch() {
         };
     }, [name, ingredients, selectedRegion, selectedCategories]);
 
+
+
+    useEffect(() => {
+        const fetchObjectData = async () => {
+          try {
+            const response = await axios.get(baseApi+`/ingredient`);
+            
+            setIngredient(response.data);
+
+          } catch (error) {
+            console.error('Error fetching object details:', error.message);
+          }
+        };
+    
+        fetchObjectData();
+      }, [ingredient]);
+
+   
     const handleChangePage = (e, val) => {
         setPage(val);
         axios.get(`${path}&page=${val}`).then((res) => {
@@ -77,7 +96,7 @@ function RecipeSearch() {
     };
     return (
         <>
-            <Search name={name} setName={setName} ingredients={ingredients} setIngredients={setIngredients} />
+            <Search name={name} setName={setName} ingredients={ingredients} setIngredients={setIngredients} ingredient={ingredient} />
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <div className="row" style={{ width: '80%' }}>
                     <div style={{ width: '35%' }}>
