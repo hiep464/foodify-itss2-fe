@@ -1,9 +1,10 @@
 import React from 'react';
-import './carouselItem.css';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
+
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import './carouselItem.css';
 
 function CarouselItem({ data ,title}) {
     const slider = React.useRef(null);
@@ -63,13 +64,16 @@ function CarouselItem({ data ,title}) {
                 {data.map((item, idx) => {
                     return (
                         <div className="card-item" key={idx}>
-                            <Link key={idx} to={`/recipe/${item.id}`}>
-                                <img
-                                    src={item.thumbnail}
-                                    alt={item.name}
-                                    style={{ width: '90%', height: '17rem', borderRadius: '10px' }}
-                                />
-                            </Link>
+                            <div className="custom">
+                                <Link key={idx} to={`/recipe/${item.id}`}>
+                                    <img
+                                        src={item.thumbnail}
+                                        alt={item.name}
+                                        style={{ width: '310px', height: '17rem', borderRadius: '10px', maxWidth:'310px' }}
+                                    />
+                                </Link>
+                                <div className="des ">{item.description}</div>
+                            </div>
                             <div className="text-name">{item.name}</div>
                         </div>
                     );
