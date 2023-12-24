@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PopupSearch from './PopupSearch/PopupSearch';
 import './Search.css';
 
-const Search = ({ name, setName, ingredients, setIngredients }) => {
+const Search = ({ name, setName, ingredients, setIngredients ,ingredient}) => {
     const [selectedWords, setSelectedWords] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
@@ -74,7 +74,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
         alignItems: 'center', // Center text vertically
         fontSize: '14px',
     };
-
+    
     return (
         <MDBRow className="justify-content-center" style={{ display: 'flex', flexWrap: 'wrap', }}>
             <MDBCol className="search-box1" style={customColStyle}>
@@ -93,47 +93,7 @@ const Search = ({ name, setName, ingredients, setIngredients }) => {
                 <PopupSearch
                     isOpen={!!inputValue}
                     inputValue={inputValue}
-                    words={[
-                        'Cà chua',
-                        'Hành',
-                        'Tỏi',
-                        'Gừng',
-                        'Cà rốt',
-                        'Bơ',
-                        'Cần tây',
-                        'Rau cải xanh',
-                        'Rau mùi',
-                        'Ớt',
-                        'muối',
-                        'tiêu',
-                        'đường',
-                        'Dầu ăn',
-                        'Bột nêm',
-                        'Sốt nấu ăn',
-                        'Gạo',
-                        'Mỳ ý',
-                        'Bún',
-                        'Bún phở',
-                        'Đậu hủ',
-                        'Đậu nành',
-                        'gà',
-                        'bò',
-                        'lợn',
-                        'Cá',
-                        'Tôm',
-                        'Trứng',
-                        'Xúc xích',
-                        'Nước mắm',
-                        'Tương ớt',
-                        'Sốt soya',
-                        'Dầu giấm',
-                        'Rượu trắng',
-                        'Bột mỳ',
-                        'Đường',
-                        'Bơ',
-                        'Trứng',
-                        'Bột nở',
-                    ]}
+                    words={ingredient}
                     onSelect={handleSearchInputChange}
                     onClose={() => setInputValue('')}
                 />

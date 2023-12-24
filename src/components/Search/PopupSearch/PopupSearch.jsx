@@ -4,10 +4,9 @@ import './PopupSearch.css';
 const PopupSearch = ({ isOpen, words, inputValue, onSelect, onClose }) => {
     //console.log(inputValue);
     const normalizedInputValue = inputValue ? inputValue.toLowerCase() : '';
-    console.log(normalizedInputValue);
-
-    const filteredWords = words.filter((word) => word.toLowerCase().includes(normalizedInputValue)
-    );
+    console.log(words);
+    const ingredientArr = Object.values(words);
+    const filteredWords =  ingredientArr.filter((word) => word.toLowerCase().includes(normalizedInputValue));
     //console.log(filteredWords);
     return (
         <div className="popup" style={{ display: isOpen ? 'block' : 'none', maxHeight: '230px', overflowY: 'auto' }}>
