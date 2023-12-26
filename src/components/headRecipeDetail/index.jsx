@@ -32,7 +32,8 @@ function HeadRpDetail({ name, description, video }) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen=""
                     // className="h-[230px] md:h-[204px] w-full"
-                    style={{borderRadius: '12px'}}
+                    
+                    style={{borderRadius: '12px', objectFit:'fill'}}
                 ></iframe>
             </div>
         </div>
