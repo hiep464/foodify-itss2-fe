@@ -15,7 +15,7 @@
 
 .text-name{
   font-weight: 545;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 20px;
   color:black;
   margin-top: 17px;
@@ -30,7 +30,7 @@
   width: 50px;
   outline: 0;
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: -70px;
   transform: translateY(-50%);
   z-index: 1;
@@ -46,7 +46,7 @@
   width: 50px;
   outline: 0;
   position: absolute;
-  top: 50%;
+  top: 44%;
   right: -40px;
   transform: translateY(-50%);
   z-index: 1;
@@ -58,11 +58,13 @@
 
 .card-item{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  justify-content: space-between;
+  max-width: 310px;
 }
 
 .custom img{

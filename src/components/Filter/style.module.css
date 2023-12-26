@@ -17,7 +17,7 @@
     border-radius: 5px;
 }
 .box{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 50px;
     padding: 10px;
     border-radius: 5px;
@@ -44,7 +44,8 @@
 .checkboxLabel {
     margin-left: 5px;
     align-items: center;
-    padding-right: 50px;
+    /* padding-right: 10px; */
+    font-weight: bolder;
 }
 
 input[type='radio'],

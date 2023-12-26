@@ -57,6 +57,7 @@
   .button{
     color: red;
     margin-left: 4px;
+    cursor: pointer;
   }
   
   
