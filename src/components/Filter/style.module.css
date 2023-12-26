@@ -46,6 +46,7 @@
     align-items: center;
     /* padding-right: 10px; */
     font-weight: bolder;
+    padding-right: 42px;
 }
 
 input[type='radio'],
