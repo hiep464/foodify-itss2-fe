@@ -62,8 +62,8 @@ function RecipeDetail() {
             allComments = [...allComments,...response.data.data]
           }
           setComments({data: allComments})
-          console.log(response.data.current_page)
-          console.log(response.data.last_page)
+          // console.log(response.data.current_page)
+          // console.log(response.data.last_page)
       } catch (error) {
           console.log(error);
       }

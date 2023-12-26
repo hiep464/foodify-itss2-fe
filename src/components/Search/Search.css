@@ -1,6 +1,7 @@
 .text-in-search-box {
     color: white;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 .form-control {
     background-image: url(../../acess/search-icon.png);

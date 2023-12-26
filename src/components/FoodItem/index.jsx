@@ -4,7 +4,7 @@ function FoodItem({ image, time, description }) {
     return (
 
         <div style={{ maxWidth: '320px'}}>
-            <img style={{ width: '300px', height: '214px',borderRadius: '15px' }} src={image} alt="" />
+            <img style={{ width: '300px', height: '214px',borderRadius: '15px' ,objectFit:'cover'}} src={image} alt="" />
             <div style={{ display: 'flex', alignItems: 'center', height: '42px' }}>
                 <img style={{ width: '24px', height: '24px', marginRight: '4px' }} src={clock} alt="" />
                 <span style={{ color: 'rgba(127, 127, 127, 1)' , width:'100%'}}>{time} phút</span>
