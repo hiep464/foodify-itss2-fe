@@ -16,6 +16,7 @@ const MostItem = ({data}) => {
                     src={data.thumbnail}
                     alt={data.name}
                     className={styles.imageFood}
+                    style={{objectFit:'fill'}}
                 />
             </Link>
         </div>
