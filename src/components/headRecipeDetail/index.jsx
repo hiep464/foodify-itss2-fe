@@ -15,7 +15,7 @@ function HeadRpDetail({ name, description, video }) {
                 <div style={{ fontSize: '40px', fontWeight: '700', color: 'black' }}>{name}</div>
             </div>
             <div style={{ width: '80%', border: '1px solid rgba(0, 0, 0, 0.1)', marginTop: '20px' }}></div>
-            <div style={{ width: '80%', margin: '30px 0' }}>{description}</div>
+            <div style={{ width: '80%', margin: '30px 0',fontSize:'25px' }}>{description}</div>
             <div style={{ width: '80%', position: 'relative', marginBottom: '30px' }}>
                 {/* <img style={{ width: '100%', borderRadius: '12px' }} src={image} alt="" />
                 <img
@@ -32,7 +32,8 @@ function HeadRpDetail({ name, description, video }) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen=""
                     // className="h-[230px] md:h-[204px] w-full"
-                    style={{borderRadius: '12px'}}
+                    
+                    style={{borderRadius: '12px', objectFit:'fill'}}
                 ></iframe>
             </div>
         </div>

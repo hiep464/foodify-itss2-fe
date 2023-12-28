@@ -7,8 +7,8 @@ import styles from './style.module.css';
 const MostItem = ({data}) => {
     const handleClick = () => {
         window.location.href = `/recipe/${data.id}`;
-      };
-  return (
+    };
+    return (
     <div className={styles.mostFood}>
         <div>
             <Link to={`/recipe/${data.id}`}>
@@ -16,6 +16,7 @@ const MostItem = ({data}) => {
                     src={data.thumbnail}
                     alt={data.name}
                     className={styles.imageFood}
+                    style={{objectFit:'fill'}}
                 />
             </Link>
         </div>

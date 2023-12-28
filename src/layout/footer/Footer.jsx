@@ -1,9 +1,11 @@
-// components/Footer/Footer.js
-
 import React from 'react';
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-import './Footer.css'; 
+// components/Footer/Footer.js
+import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdb-react-ui-kit';
+
 import logo from '../../acess/logo.png';
+
+import './Footer.css';
+
 const Footer = () => {
     return (
         <MDBFooter bgColor='#F9F9F9' className='small text-center text-lg-start ' >
@@ -11,19 +13,17 @@ const Footer = () => {
           </section>
     
           <section className='' >
-            <MDBContainer className='text-center text-md-start mt-5' style={{marginLeft:420}}>
-              <MDBRow className='mt-3'>
-                <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
+            <MDBContainer className='text-center text-md-start mt-5'>
+              <MDBRow className='mt-3 justify-content-center'>
+                <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-3'>
                   <h6 className='text-with-shadow  fw-bold mb-4'>
                     
                   <img src={logo} alt="" /> </h6>
                   <p>
-                  On the other hand, we denounce with righteous indignation and dislike men who are so beguiled 
-                  and demoralized by the charms of pleasure of the moment
+                  On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment
                   </p>
                 </MDBCol>
-    
-                <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
+                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-md-0 mb-3'>
                   <h6 className='text-dark small  fw-bold mb-4'>Tastebite</h6>
                   <p>
                     <a href='/' className='text-gray'>
@@ -47,7 +47,7 @@ const Footer = () => {
                   </p>
                 </MDBCol>
     
-                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
+                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-md-0 mb-3'>
                   <h6 className='text-dark small  fw-bold mb-4'>Legal</h6>
                   <p>
                     <a href='/' className='text-gray '>
@@ -71,7 +71,7 @@ const Footer = () => {
                   </p>
                 </MDBCol>
     
-                <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
+                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-md-0 mb-3'>
                   <h6 className='text-dark small  fw-bold mb-4'>Follow</h6>
                   <p className='text-gray'>
                     
