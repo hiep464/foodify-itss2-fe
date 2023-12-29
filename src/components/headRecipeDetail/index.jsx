@@ -27,7 +27,7 @@ function HeadRpDetail({ name, description, video }) {
                     title={name}
                     width="100%"
                     height="630"
-                    src={`https://www.youtube.com/embed/${video?.match(/[?&]v=([^&]+)/)[1]}?feature=oembed`}
+                    src={`https://www.youtube.com/embed/${video?.match(/^(?:(?:https|http):\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be).*?(?:\/|v\/|u\/|embed\/|shorts\/|watch\?v=|(?<username>user\/))(?<id>[\w\-]{11})(?:\?|&|$)/)?.groups?.id}?feature=oembed`}
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen=""

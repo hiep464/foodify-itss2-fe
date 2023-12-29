@@ -85,7 +85,7 @@ function RecipeSearch() {
         };
     
         fetchObjectData();
-      }, [ingredient]);
+      }, []);
 
    
     const handleChangePage = (e, val) => {
