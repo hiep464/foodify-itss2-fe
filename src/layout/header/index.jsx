@@ -10,8 +10,8 @@ import searchColor from '../../acess/Search-color.png';
 function Header() {
     const location = useLocation();
 
-    const isHomeActive = location.pathname === '/home';
-    const isSearchActive = location.pathname === '/';
+    const isHomeActive = location.pathname === '/';
+    const isSearchActive = location.pathname === '/recipe_search';
 
     return (
         <div
@@ -27,7 +27,7 @@ function Header() {
             </Link>
             <div style={{ display: 'flex' ,alignItems: 'center' }}>
                 <Link
-                    to="/home"
+                    to="/"
                     style={{
                         textDecoration: 'none',
                         color: isHomeActive ? 'rgba(255, 100, 47, 1)' : 'black',
@@ -40,7 +40,7 @@ function Header() {
                 </Link>
             </div>
             <Link
-                to="/"
+                to="/recipe_search"
                 style={{
                     textDecoration: 'none',
                     color: isSearchActive ? 'rgba(255, 100, 47, 1)' : 'black',
