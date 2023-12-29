@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../acess/logo.png';
-import home from '../../acess/Home.png';
-import homeColor from '../../acess/home-color.png';
-import searchColor from '../../acess/Search-color.png';
-import search from '../../acess/Search.png';
 
+import homeColor from '../../acess/home-color.png';
+import home from '../../acess/home-icon.svg';
+import logo from '../../acess/logo.svg';
+import search from '../../acess/seach-icon.svg';
+import searchColor from '../../acess/Search-color.png';
 
 function Header() {
     const location = useLocation();
