@@ -8,7 +8,7 @@
     padding-right: 40px;
 }
 .mostFood:hover .imageFood{order: 2 !important;}
-.mostFood:hover .title{order: 1 !important;}
+.mostFood:hover .title{order: 1 !important;}  
 
   .imageFood {
     border-right: 10px;

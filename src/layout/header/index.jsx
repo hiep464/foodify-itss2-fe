@@ -22,7 +22,7 @@ function Header() {
                 display: 'flex',
                 alignItems: 'center',
             }}
-        >  <Link to="/home">
+        >  <Link to="/">
             <img style={{ margin: '0 270px 0 200px' }} src={logo} alt="" />
             </Link>
             <div style={{ display: 'flex' ,alignItems: 'center' }}>

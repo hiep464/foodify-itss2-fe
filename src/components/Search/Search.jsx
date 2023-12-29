@@ -84,12 +84,12 @@ const Search = ({ name, setName, ingredients, setIngredients ,ingredient}) => {
                     className="form-control"
                     type="text"
                     placeholder="Nhập tên nguyên liệu"
+                    placeholderColor="red"
                     value={inputValue}
                     onChange={(e) => handleInputChange(e.target.value)}
                     // onKeyDown={(e)=> handleSearchInputChange(e)}
                     aria-label="Search"
                 />
-
                 <PopupSearch
                     isOpen={!!inputValue}
                     inputValue={inputValue}
