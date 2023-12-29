@@ -24,7 +24,7 @@
     background: #E4F1FF;
     display: flex;
     flex-direction: column;
-    padding: 100px 30px 30px 50px;
+    padding: 60px 30px 30px 50px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow: hidden;
@@ -37,11 +37,13 @@
     margin-right: 50px;
     justify-content: space-between;
     padding-bottom: 20px;
+    max-height: 265px;
+    overflow: hidden;
   }
   
   .name {
     font-weight: bold;
-    font-size: 35px;
+    font-size: 30px;
   }
   
   
@@ -52,7 +54,7 @@
     width: 30px;
     height: 30px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   .button{
