@@ -13,17 +13,16 @@ const Footer = () => {
           </section>
     
           <section className='' >
-            <MDBContainer className='text-center text-md-start mt-5'>
-              <MDBRow className='mt-3 justify-content-center'>
-                <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-3'>
-                  <h6 className='text-with-shadow  fw-bold mb-4'>
+            <MDBContainer className='text-center text-md-start mt-7'>
+              <MDBRow className='mt-3 justify-content-center'> 
+                <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-3 text-center'>
+                  <h6 className='text-with-shadow  fw-bold mb-1'>
                     
                   <img src={logo} alt="" /> </h6>
                   <p>
-                  On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment
-                  </p>
+                  Chúng tôi sẽ luôn đồng hành và đưa đến bạn những điều tuyệt vời nhất</p>
                 </MDBCol>
-                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-md-0 mb-3'>
+                <MDBCol md="3" lg="2" xl="1" className='mx-auto mb-md-20 mb-3'>
                   <h6 className='text-dark small  fw-bold mb-4'>Tastebite</h6>
                   <p>
                     <a href='/' className='text-gray'>
@@ -47,7 +46,7 @@ const Footer = () => {
                   </p>
                 </MDBCol>
     
-                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-md-0 mb-3'>
+                <MDBCol md="3" lg="2" xl="1" className='mx-auto mb-md-0 mb-3'>
                   <h6 className='text-dark small  fw-bold mb-4'>Legal</h6>
                   <p>
                     <a href='/' className='text-gray '>
@@ -71,7 +70,7 @@ const Footer = () => {
                   </p>
                 </MDBCol>
     
-                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-md-0 mb-3'>
+                <MDBCol md="3" lg="2" xl="1" className='mx-auto mb-md-0 mb-3'>
                   <h6 className='text-dark small  fw-bold mb-4'>Follow</h6>
                   <p className='text-gray'>
                     

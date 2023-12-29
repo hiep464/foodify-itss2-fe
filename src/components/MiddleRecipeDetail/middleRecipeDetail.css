@@ -1,25 +1,37 @@
 .grid-container {
     display: grid;
     grid-template-columns: 110px 110px 110px;
-  }
+}
 .grid-item {
-    border-right: 1px solid #E8E8E8    ;
-    color: #7F7F7F;
+    border-right: 1px solid #e8e8e8;
+    color: #7f7f7f;
     font-size: 12px;
     text-align: center;
     padding-left: -20px;
-    
-  }
-  .grid-item1 {
-    border-right: 1px solid #E8E8E8 ;
-    color:black;
+}
+.grid-item1 {
+    border-right: 1px solid #e8e8e8;
+    color: black;
     font-size: 12px;
     text-align: center;
     padding-left: -20px;
-    
-  }
+}
+.title-text {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 30px;
+    line-height: 36px;
+}
+.text-description{
+  font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 18px;
+    line-height: 27px;
 
-  /* .comments{
+}
+/* .comments{
     margin-left: 150px;
     margin-top: 30px;
     font-size: 20px;

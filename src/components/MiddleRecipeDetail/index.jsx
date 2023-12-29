@@ -24,7 +24,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
             <div className="justify-content-center" style={{ display: 'flex' , width:'80%', marginLeft:'100px'}}>
                 {/* Column 1 */}
                 <div style={{ width:'47%'}}>
-                    <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Nguyên Liệu</p>
+                    <p className="title-text">Nguyên Liệu</p>
                     {foodData?.ingredients.map((ingredient) => {
                         return (
                             <div style={{ marginTop: 10, fontSize: 18, color: 'black' }}>
@@ -40,7 +40,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
 
                 {/* Column 2 */}
                 <div style={{  display: 'flex', flexDirection: 'column', width:'47%'}}>
-                    <p style={{ fontWeight: 'bold', color: 'black', fontSize: '30px' }}>Công Thức</p>
+                    <p className="title-text">Công Thức</p>
                     {foodData?.steps.map((step) => {
                         return (
                             <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: 15 }}>
@@ -62,7 +62,7 @@ const MiddleRecipeDetail = ({ foodData }) => {
                                     {step.number}
                                 </span>
                                 <div style={{ flex: 1 }}>
-                                    <span style={{ display: 'inline-block', whiteSpace: 'normal', paddingBottom: 10 }}>
+                                    <span className="text-description" style={{ display: 'inline-block', whiteSpace: 'normal', paddingBottom: 10 }}>
                                         {step.content}
                                     </span>
                                 </div>
