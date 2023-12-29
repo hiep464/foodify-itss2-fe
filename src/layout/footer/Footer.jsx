@@ -2,7 +2,7 @@ import React from 'react';
 // components/Footer/Footer.js
 import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from 'mdb-react-ui-kit';
 
-import logo from '../../acess/logo.png';
+import logo from '../../acess/logo.svg';
 
 import './Footer.css';
 
