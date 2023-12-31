@@ -70,8 +70,6 @@ function RecipeSearch() {
         };
     }, [name, ingredients, selectedRegion, selectedCategories]);
 
-
-
     useEffect(() => {
         const fetchObjectData = async () => {
           try {

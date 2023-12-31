@@ -26,7 +26,7 @@ const MostItem = ({data}) => {
                 <div className={styles.name}>
                     {data.name}
                 </div>
-                <div >
+                <div className={styles.desc}>
                     {data.description}
                 </div>
             </div>
