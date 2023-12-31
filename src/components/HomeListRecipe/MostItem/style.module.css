@@ -62,4 +62,8 @@
     cursor: pointer;
   }
   
-  
+  .desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 160px;
+  }

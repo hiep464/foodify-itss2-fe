@@ -11,8 +11,8 @@ function FoodItem({ image, time, description }) {
                 <img style={{ width: '24px', height: '24px', marginRight: '4px' }} src={clock} alt="" />
                 <span style={{ color: 'rgba(127, 127, 127, 1)' , width:'100%'}}>{time} phút</span>
             </div>
-            <div>
-                <span style={{ color: 'black', fontWeight: '700', fontSize: '18px', textOverflow:'ellipsis' , overflow:'hidden', whiteSpace:'nowrap' }}>{description}</span>
+            <div style={{maxWidth: '300px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
+                <span style={{width:'100%', color: 'black', fontWeight: '700', fontSize: '18px'}}>{description}</span>
             </div>
         </div>
     );

@@ -69,7 +69,7 @@ function CarouselItem({ data ,title}) {
                                     <img
                                         src={item.thumbnail}
                                         alt={item.name}
-                                        style={{ width: '310px', height: '17rem', borderRadius: '10px', maxWidth:'310px' ,objectFit:'fill'}}
+                                        style={{ width: '310px', height: '17rem', borderRadius: '10px', maxWidth:'310px' ,objectFit:'cover', objectPosition:'center'}}
                                     />
                                 </Link>
                                 <div className="des ">{item.description}</div>
