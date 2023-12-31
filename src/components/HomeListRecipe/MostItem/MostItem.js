@@ -8,6 +8,7 @@ const MostItem = ({data}) => {
     const handleClick = () => {
         window.location.href = `/recipe/${data.id}`;
     };
+
     return (
     <div className={styles.mostFood}>
         <div>
@@ -16,7 +17,7 @@ const MostItem = ({data}) => {
                     src={data.thumbnail}
                     alt={data.name}
                     className={styles.imageFood}
-                    style={{objectFit:'fill'}}
+                    style={{objectFit:'cover', objectPosition:'center'}}
                 />
             </Link>
         </div>
