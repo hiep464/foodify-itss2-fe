@@ -12,7 +12,7 @@ function FoodItem({ image, time, description }) {
                 <span style={{ color: 'rgba(127, 127, 127, 1)' , width:'100%'}}>{time} phút</span>
             </div>
             <div>
-                <span style={{ color: 'black', fontWeight: '700', fontSize: '18px' }}>{description}</span>
+                <span style={{ color: 'black', fontWeight: '700', fontSize: '18px', textOverflow:'ellipsis' , overflow:'hidden', whiteSpace:'nowrap' }}>{description}</span>
             </div>
         </div>
     );
